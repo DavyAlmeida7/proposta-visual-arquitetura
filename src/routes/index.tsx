@@ -35,30 +35,31 @@ function Hero() {
 
       <div className="mx-auto grid max-w-7xl items-center gap-14 px-6 lg:grid-cols-12">
         <div className="lg:col-span-7">
-          <SectionLabel>Apresentação de proposta</SectionLabel>
+          <SectionLabel>Apresentação conceitual · Giovanna Caires</SectionLabel>
           <h1 className="text-[clamp(2.6rem,6vw,5rem)] font-display leading-[1.02] tracking-tight text-foreground">
-            Um <em className="font-medium italic text-[color:var(--sage-deep)]">site-portfólio</em>{" "}
-            à altura do seu trabalho.
+            Proposta visual para o{" "}
+            <em className="font-medium italic text-[color:var(--sage-deep)]">site-portfólio</em>{" "}
+            de Giovanna Caires.
           </h1>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Uma vitrine digital com identidade própria, navegação editorial e uma área administrativa
-            simples para você atualizar os projetos quando quiser — sem depender de ninguém.
+            Este documento reúne a estrutura, a linguagem e a direção estética pensadas para
+            apresentar sua presença digital — um ponto de partida para discussão, não uma versão
+            final.
           </p>
 
           <div className="mt-9 flex flex-wrap items-center gap-3">
-            <a
-              href="#estrutura"
-              className="group inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3.5 text-sm font-medium text-background transition-all hover:bg-foreground/90"
+            <span
+              aria-hidden
+              className="inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3.5 text-sm font-medium text-background"
             >
-              Explorar proposta
-              <span className="transition-transform group-hover:translate-x-1">→</span>
-            </a>
-            <a
-              href="#contato"
-              className="inline-flex items-center gap-2 rounded-full border border-border bg-background/60 px-6 py-3.5 text-sm font-medium text-foreground backdrop-blur transition-colors hover:bg-background"
+              Estrutura proposta
+            </span>
+            <span
+              aria-hidden
+              className="inline-flex items-center gap-2 rounded-full border border-border bg-background/60 px-6 py-3.5 text-sm font-medium text-foreground backdrop-blur"
             >
-              Falar comigo
-            </a>
+              Direção visual sugerida
+            </span>
           </div>
 
           <dl className="mt-12 grid max-w-md grid-cols-3 gap-6 border-t border-border/60 pt-6">
@@ -67,11 +68,11 @@ function Hero() {
               <dd className="mt-1 font-display text-xl">Autoridade</dd>
             </div>
             <div>
-              <dt className="text-[11px] uppercase tracking-widest text-muted-foreground">Gestão</dt>
-              <dd className="mt-1 font-display text-xl">Simples</dd>
+              <dt className="text-[11px] uppercase tracking-widest text-muted-foreground">Conteúdo</dt>
+              <dd className="mt-1 font-display text-xl">Portfólio</dd>
             </div>
             <div>
-              <dt className="text-[11px] uppercase tracking-widest text-muted-foreground">Visual</dt>
+              <dt className="text-[11px] uppercase tracking-widest text-muted-foreground">Tom</dt>
               <dd className="mt-1 font-display text-xl">Editorial</dd>
             </div>
           </dl>
@@ -90,8 +91,8 @@ function Hero() {
           <div className="absolute -bottom-6 -left-6 hidden h-32 w-32 rounded-full sm:block"
                style={{ background: "var(--gradient-sage)", boxShadow: "var(--shadow-soft)" }} />
           <div className="absolute -right-4 top-10 hidden rounded-2xl border border-border bg-background/90 px-4 py-3 text-xs backdrop-blur sm:block">
-            <div className="font-display text-sm">Casa Jardim Botânico</div>
-            <div className="text-muted-foreground">Reforma residencial · 2024</div>
+            <div className="font-display text-sm">Exemplo de projeto</div>
+            <div className="text-muted-foreground">Imagem ilustrativa · referência visual</div>
           </div>
         </div>
       </div>
