@@ -214,14 +214,14 @@ function Estrutura() {
 
 function SecoesHome() {
   const blocks = [
-    { t: "Hero", d: "Abertura visual com imagem e apresentação resumida." },
-    { t: "Projetos", d: "Seleção de três projetos principais em destaque." },
-    { t: "Serviços", d: "Tipos de atuação, especialidades e diferenciais de atendimento." },
-    { t: "Processo", d: "Resumo das etapas: escuta, proposta, detalhamento, acompanhamento." },
-    { t: "Sobre mim", d: "Espaço dedicado à história e à forma de trabalhar de Giovanna." },
-    { t: "Depoimentos", d: "Área prevista para feedbacks reais de clientes (quando houver)." },
-    { t: "FAQ", d: "Reúne dúvidas frequentes para deixar a navegação mais clara." },
-    { t: "Contato", d: "Espaço previsto para WhatsApp, e-mail, Instagram e localização." },
+    { t: "Hero", d: "Abertura visual com imagem e apresentação resumida.", Icon: Layout },
+    { t: "Projetos", d: "Seleção de três projetos principais em destaque.", Icon: LayoutGrid },
+    { t: "Serviços", d: "Tipos de atuação, especialidades e diferenciais de atendimento.", Icon: Briefcase },
+    { t: "Processo", d: "Resumo das etapas: escuta, proposta, detalhamento, acompanhamento.", Icon: Workflow },
+    { t: "Sobre mim", d: "Espaço dedicado à história e à forma de trabalhar de Giovanna.", Icon: User },
+    { t: "Depoimentos", d: "Área prevista para feedbacks reais de clientes (quando houver).", Icon: MessageSquareQuote },
+    { t: "FAQ", d: "Reúne dúvidas frequentes para deixar a navegação mais clara.", Icon: HelpCircle },
+    { t: "Contato", d: "Espaço previsto para WhatsApp, e-mail, Instagram e localização.", Icon: Mail },
   ];
   return (
     <section className="relative py-28" style={{ background: "var(--gradient-warm)" }}>
@@ -240,23 +240,32 @@ function SecoesHome() {
         </div>
 
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-          {blocks.map((b, i) => (
-            <div
-              key={b.t}
-              className="group relative overflow-hidden rounded-2xl border border-border/60 bg-background p-6 transition-all hover:-translate-y-0.5 hover:shadow-[var(--shadow-soft)]"
-            >
-              <div className="text-[11px] tracking-widest text-muted-foreground">
-                {String(i + 1).padStart(2, "0")}
-              </div>
-              <div className="mt-3 font-display text-2xl">{b.t}</div>
-              <p className="mt-2 text-sm text-muted-foreground">{b.d}</p>
+          {blocks.map((b, i) => {
+            const Icon = b.Icon;
+            return (
               <div
-                aria-hidden
-                className="absolute -right-6 -top-6 h-16 w-16 rounded-full opacity-0 blur-xl transition-opacity group-hover:opacity-60"
-                style={{ background: "var(--sage)" }}
-              />
-            </div>
-          ))}
+                key={b.t}
+                className="group relative overflow-hidden rounded-2xl border border-border/60 bg-background p-6 transition-all hover:-translate-y-1 hover:border-[color:var(--sage)] hover:shadow-[var(--shadow-float)]"
+              >
+                {/* gradiente decorativo sempre visível */}
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute -right-10 -top-10 h-28 w-28 rounded-full opacity-70 blur-2xl transition-all duration-500 group-hover:opacity-100 group-hover:scale-110"
+                  style={{ background: "var(--gradient-sage)" }}
+                />
+                <div className="relative flex items-start justify-between">
+                  <span className="grid h-10 w-10 place-items-center rounded-xl bg-[color:var(--bone)] text-[color:var(--sage-deep)] transition-colors group-hover:bg-[color:var(--sage)]/25">
+                    <Icon className="h-5 w-5" strokeWidth={1.6} />
+                  </span>
+                  <span className="text-[11px] tracking-widest text-muted-foreground">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                </div>
+                <div className="relative mt-4 font-display text-2xl">{b.t}</div>
+                <p className="relative mt-2 text-sm text-muted-foreground">{b.d}</p>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
