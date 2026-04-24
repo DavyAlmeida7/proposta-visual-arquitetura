@@ -642,9 +642,14 @@ function DirecaoVisual() {
               key={p.nome}
               className="overflow-hidden rounded-3xl border border-border bg-card shadow-[var(--shadow-soft)]"
             >
-              <div className="grid h-44 grid-cols-5">
+              <div className="palette-strip h-44">
                 {p.cores.map((c) => (
-                  <div key={c} style={{ backgroundColor: c }} />
+                  <div
+                    key={c}
+                    title={c}
+                    style={{ backgroundColor: c }}
+                    className="cursor-pointer"
+                  />
                 ))}
               </div>
               <div className="p-6">
