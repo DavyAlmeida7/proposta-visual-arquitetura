@@ -1,5 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { FloatingNav } from "@/components/FloatingNav";
+import {
+  Layout,
+  LayoutGrid,
+  Briefcase,
+  Workflow,
+  User,
+  MessageSquareQuote,
+  HelpCircle,
+  Mail,
+} from "lucide-react";
 import heroImg from "@/assets/hero-architecture.jpg";
 import project1 from "@/assets/project-1.jpg";
 import project2 from "@/assets/project-2.jpg";
@@ -204,14 +214,14 @@ function Estrutura() {
 
 function SecoesHome() {
   const blocks = [
-    { t: "Hero", d: "Abertura visual com imagem e apresentação resumida." },
-    { t: "Projetos", d: "Seleção de três projetos principais em destaque." },
-    { t: "Serviços", d: "Tipos de atuação, especialidades e diferenciais de atendimento." },
-    { t: "Processo", d: "Resumo das etapas: escuta, proposta, detalhamento, acompanhamento." },
-    { t: "Sobre mim", d: "Espaço dedicado à história e à forma de trabalhar de Giovanna." },
-    { t: "Depoimentos", d: "Área prevista para feedbacks reais de clientes (quando houver)." },
-    { t: "FAQ", d: "Reúne dúvidas frequentes para deixar a navegação mais clara." },
-    { t: "Contato", d: "Espaço previsto para WhatsApp, e-mail, Instagram e localização." },
+    { t: "Hero", d: "Abertura visual com imagem e apresentação resumida.", Icon: Layout },
+    { t: "Projetos", d: "Seleção de três projetos principais em destaque.", Icon: LayoutGrid },
+    { t: "Serviços", d: "Tipos de atuação, especialidades e diferenciais de atendimento.", Icon: Briefcase },
+    { t: "Processo", d: "Resumo das etapas: escuta, proposta, detalhamento, acompanhamento.", Icon: Workflow },
+    { t: "Sobre mim", d: "Espaço dedicado à história e à forma de trabalhar de Giovanna.", Icon: User },
+    { t: "Depoimentos", d: "Área prevista para feedbacks reais de clientes (quando houver).", Icon: MessageSquareQuote },
+    { t: "FAQ", d: "Reúne dúvidas frequentes para deixar a navegação mais clara.", Icon: HelpCircle },
+    { t: "Contato", d: "Espaço previsto para WhatsApp, e-mail, Instagram e localização.", Icon: Mail },
   ];
   return (
     <section className="relative py-28" style={{ background: "var(--gradient-warm)" }}>
@@ -230,23 +240,32 @@ function SecoesHome() {
         </div>
 
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-          {blocks.map((b, i) => (
-            <div
-              key={b.t}
-              className="group relative overflow-hidden rounded-2xl border border-border/60 bg-background p-6 transition-all hover:-translate-y-0.5 hover:shadow-[var(--shadow-soft)]"
-            >
-              <div className="text-[11px] tracking-widest text-muted-foreground">
-                {String(i + 1).padStart(2, "0")}
-              </div>
-              <div className="mt-3 font-display text-2xl">{b.t}</div>
-              <p className="mt-2 text-sm text-muted-foreground">{b.d}</p>
+          {blocks.map((b, i) => {
+            const Icon = b.Icon;
+            return (
               <div
-                aria-hidden
-                className="absolute -right-6 -top-6 h-16 w-16 rounded-full opacity-0 blur-xl transition-opacity group-hover:opacity-60"
-                style={{ background: "var(--sage)" }}
-              />
-            </div>
-          ))}
+                key={b.t}
+                className="group relative overflow-hidden rounded-2xl border border-border/60 bg-background p-6 transition-all hover:-translate-y-1 hover:border-[color:var(--sage)] hover:shadow-[var(--shadow-float)]"
+              >
+                {/* gradiente decorativo sempre visível */}
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute -right-10 -top-10 h-28 w-28 rounded-full opacity-70 blur-2xl transition-all duration-500 group-hover:opacity-100 group-hover:scale-110"
+                  style={{ background: "var(--gradient-sage)" }}
+                />
+                <div className="relative flex items-start justify-between">
+                  <span className="grid h-10 w-10 place-items-center rounded-xl bg-[color:var(--bone)] text-[color:var(--sage-deep)] transition-colors group-hover:bg-[color:var(--sage)]/25">
+                    <Icon className="h-5 w-5" strokeWidth={1.6} />
+                  </span>
+                  <span className="text-[11px] tracking-widest text-muted-foreground">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                </div>
+                <div className="relative mt-4 font-display text-2xl">{b.t}</div>
+                <p className="relative mt-2 text-sm text-muted-foreground">{b.d}</p>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
@@ -255,9 +274,9 @@ function SecoesHome() {
 
 function ProjetosDestaque() {
   const projetos = [
-    { img: project1, nome: "Projeto exemplo 01", cidade: "Cidade ilustrativa", tipo: "Residencial", ano: "Ano" },
-    { img: project2, nome: "Projeto exemplo 02", cidade: "Cidade ilustrativa", tipo: "Reforma", ano: "Ano" },
-    { img: project3, nome: "Projeto exemplo 03", cidade: "Cidade ilustrativa", tipo: "Residencial", ano: "Ano" },
+    { img: project1, cidade: "Cidade ilustrativa", tipo: "Residencial", ano: "Ano", area: "180 m²" },
+    { img: project2, cidade: "Cidade ilustrativa", tipo: "Reforma de cozinha", ano: "Ano", area: "42 m²" },
+    { img: project3, cidade: "Cidade ilustrativa", tipo: "Suíte residencial", ano: "Ano", area: "28 m²" },
   ];
   return (
     <section id="projetos" className="relative py-28">
@@ -281,35 +300,70 @@ function ProjetosDestaque() {
           </span>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-3">
+        <div className="grid gap-7 md:grid-cols-3">
           {projetos.map((p, i) => (
-            <article key={p.nome} className="group">
-              <div
-                className={`relative aspect-[4/5] overflow-hidden ${
-                  i === 1 ? "organic-mask-2" : i === 2 ? "organic-mask-3" : "organic-mask-1"
-                } shadow-[var(--shadow-soft)]`}
-              >
+            <article
+              key={i}
+              role="button"
+              aria-label={`Exemplo de card de projeto ${i + 1} (visual ilustrativo, não clicável)`}
+              className="group relative flex cursor-pointer flex-col overflow-hidden rounded-3xl border border-border/70 bg-card shadow-[var(--shadow-soft)] transition-all duration-500 hover:-translate-y-1.5 hover:border-[color:var(--sage)] hover:shadow-[var(--shadow-float)]"
+            >
+              <div className="relative aspect-[4/5] overflow-hidden">
                 <img
                   src={p.img}
-                  alt={p.nome}
+                  alt={`Projeto exemplo ${String(i + 1).padStart(2, "0")} — ${p.cidade}`}
                   loading="lazy"
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.06]"
                   width={1024}
                   height={1280}
                 />
+                {/* overlay sutil sempre + intensifica no hover */}
+                <div
+                  aria-hidden
+                  className="absolute inset-0 bg-gradient-to-t from-foreground/40 via-foreground/0 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-90"
+                />
+                {/* tag superior — cidade */}
+                <div className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full bg-background/80 px-3 py-1.5 text-[11px] uppercase tracking-[0.18em] text-foreground/80 backdrop-blur">
+                  <span
+                    className="h-1.5 w-1.5 rounded-full"
+                    style={{ background: "var(--gradient-sage)" }}
+                  />
+                  {p.cidade}
+                </div>
+                {/* indicação visual de "abrir" no hover */}
+                <div className="absolute right-4 top-4 grid h-9 w-9 translate-y-2 place-items-center rounded-full bg-background/90 text-foreground opacity-0 backdrop-blur transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 17L17 7M9 7h8v8" /></svg>
+                </div>
+                {/* nome do projeto sobre a imagem */}
+                <div className="absolute bottom-0 left-0 right-0 p-5">
+                  <div className="font-display text-2xl leading-tight text-background">
+                    Projeto exemplo {String(i + 1).padStart(2, "0")}
+                  </div>
+                  <div className="mt-1 text-[12px] tracking-wide text-background/75">
+                    {p.tipo} · {p.ano}
+                  </div>
+                </div>
               </div>
-              <div className="mt-5 flex items-baseline justify-between gap-3">
-                <h3 className="font-display text-2xl leading-tight">{p.nome}</h3>
-                <span className="text-xs text-muted-foreground">{p.ano}</span>
-              </div>
-              <div className="mt-1 text-sm text-muted-foreground">
-                {p.cidade} · {p.tipo}
-              </div>
-              <div className="mt-1 text-[11px] uppercase tracking-widest text-muted-foreground/70">
-                Conteúdo ilustrativo
+              {/* rodapé do card */}
+              <div className="flex items-center justify-between border-t border-border/70 bg-card px-5 py-4 text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+                <span>{p.area}</span>
+                <span>Conteúdo ilustrativo</span>
+                <span className="inline-flex items-center gap-1 text-[color:var(--sage-deep)] opacity-70 transition-opacity group-hover:opacity-100">
+                  Abrir projeto
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 5l7 7-7 7" /></svg>
+                </span>
               </div>
             </article>
           ))}
+        </div>
+
+        <div className="mt-8 flex justify-center">
+          <span
+            aria-hidden
+            className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-5 py-2.5 text-xs uppercase tracking-[0.18em] text-muted-foreground"
+          >
+            Espaço previsto · Ver todos os projetos
+          </span>
         </div>
       </div>
     </section>
@@ -397,12 +451,12 @@ function PaginaProjeto() {
 
 function AdminSimples() {
   const acoes = [
-    "Adicionar projetos novos",
-    "Atualizar projetos existentes",
-    "Remover projetos do portfólio",
-    "Organizar a ordem de exibição",
-    "Marcar projetos em destaque",
-    "Acesso protegido por login",
+    { t: "Adicionar projetos novos", d: "Cadastrar um projeto recém-finalizado em poucos minutos." },
+    { t: "Atualizar projetos existentes", d: "Editar fotos, textos e informações sempre que precisar." },
+    { t: "Remover projetos do portfólio", d: "Tirar do ar projetos que não fazem mais sentido mostrar." },
+    { t: "Organizar a ordem de exibição", d: "Definir manualmente quais aparecem primeiro." },
+    { t: "Marcar projetos em destaque", d: "Selecionar os três projetos que aparecem na home." },
+    { t: "Acesso protegido por login pessoal", d: "Apenas Giovanna entra na área de gestão." },
   ];
   return (
     <section id="admin" className="relative py-28">
@@ -414,9 +468,14 @@ function AdminSimples() {
             <em className="italic text-[color:var(--sage-deep)]">sem complicação</em>.
           </h2>
           <p className="mt-6 max-w-md text-muted-foreground">
-            Uma área protegida por acesso pessoal, pensada para o dia a dia do escritório. Permite
-            adicionar, atualizar e organizar projetos sem depender de outras pessoas — em
-            linguagem simples, sem termos técnicos.
+            Uma área de gestão exclusiva, acessada apenas por Giovanna com login pessoal.
+            É por aqui que novos projetos são adicionados à página{" "}
+            <code className="rounded bg-[color:var(--bone)] px-1.5 py-0.5 text-[12px] text-[color:var(--sage-deep)]">/projetos</code>{" "}
+            do site — autonomia total para atualizar o portfólio sempre que quiser, sem precisar
+            acionar terceiros.
+          </p>
+          <p className="mt-4 max-w-md text-sm text-muted-foreground">
+            O que você cadastra aqui aparece automaticamente no site, no mesmo padrão visual.
           </p>
         </div>
 
@@ -436,16 +495,21 @@ function AdminSimples() {
               <ul className="space-y-2.5">
                 {acoes.map((a, i) => (
                   <li
-                    key={a}
-                    className="flex items-center justify-between rounded-xl border border-border/70 bg-[color:var(--bone)] px-4 py-3 text-sm"
+                    key={a.t}
+                    className="flex items-start justify-between gap-4 rounded-xl border border-border/70 bg-[color:var(--bone)] px-4 py-3 text-sm"
                   >
-                    <span className="flex items-center gap-3">
-                      <span className="grid h-7 w-7 place-items-center rounded-full bg-[color:var(--sage)]/20 text-[color:var(--sage-deep)] text-xs">
+                    <span className="flex items-start gap-3">
+                      <span className="mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-full bg-[color:var(--sage)]/20 text-[color:var(--sage-deep)] text-xs">
                         ✓
                       </span>
-                      {a}
+                      <span>
+                        <span className="block font-medium text-foreground">{a.t}</span>
+                        <span className="block text-xs text-muted-foreground">{a.d}</span>
+                      </span>
                     </span>
-                    <span className="text-xs text-muted-foreground">item {i + 1}</span>
+                    <span className="shrink-0 text-[10px] uppercase tracking-widest text-muted-foreground">
+                      item {String(i + 1).padStart(2, "0")}
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -459,11 +523,27 @@ function AdminSimples() {
 
 function Opcionais() {
   const mods = [
-    { t: "Blog", d: "Espaço para conteúdos autorais, reforçando autoridade ao longo do tempo." },
-    { t: "Fornecedores", d: "Organização interna de parceiros, lojas e profissionais de confiança." },
-    { t: "Clientes e arquivos", d: "Espaço por cliente, com referências, documentos e materiais." },
-    { t: "Biblioteca de referências", d: "Banco visual interno, organizado por tema ou por projeto." },
-    { t: "Apoio à apresentação", d: "Ferramentas simples para apoiar a montagem de propostas." },
+    {
+      t: "Blog",
+      d: "Espaço para conteúdos autorais — projetos comentados, processos, reflexões. Reforça autoridade ao longo do tempo e ajuda na descoberta orgânica do site.",
+      fixo: true,
+    },
+    {
+      t: "Fornecedores",
+      d: "Cadastro interno de parceiros, lojas e profissionais de confiança, organizados por categoria para consulta rápida no dia a dia.",
+    },
+    {
+      t: "Clientes e arquivos",
+      d: "Um espaço por cliente para reunir referências, documentos e materiais do projeto em um só lugar — sem precisar buscar em pastas espalhadas.",
+    },
+    {
+      t: "Biblioteca de referências",
+      d: "Banco visual interno do escritório, com imagens organizadas por tema, ambiente ou projeto, fácil de consultar quando surgir uma ideia.",
+    },
+    {
+      t: "Apoio à apresentação",
+      d: "Ferramentas simples para montar propostas e apresentações — paletas, materiais, moodboards rápidos a partir do que já está cadastrado.",
+    },
   ];
   return (
     <section className="relative py-28" style={{ background: "var(--gradient-warm)" }}>
@@ -475,29 +555,50 @@ function Opcionais() {
               Módulos complementares, conforme a rotina.
             </h2>
           </div>
-          <p className="max-w-md text-sm text-muted-foreground lg:col-span-5">
-            Além da gestão dos projetos, o site pode receber, no futuro, ferramentas
-            complementares de organização e apoio ao escritório. Estes módulos são opcionais e
-            discutíveis — não fazem parte obrigatória da proposta inicial.
-          </p>
+          <div className="space-y-3 text-sm text-muted-foreground lg:col-span-5">
+            <p>
+              Além da gestão dos projetos, o site pode receber, no futuro, ferramentas
+              complementares de organização e apoio ao escritório.
+            </p>
+            <p>
+              <span className="font-medium text-foreground">O blog</span> é um módulo mais comum e
+              recomendado. Os demais são{" "}
+              <span className="font-medium text-foreground">apenas exemplos</span> de ferramentas
+              internas que poderiam fazer sentido — não são propostas fechadas. O conjunto real
+              seria definido junto, conforme a rotina do escritório.
+            </p>
+          </div>
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
           {mods.map((m, i) => (
             <div
               key={m.t}
-              className={`rounded-3xl border border-border bg-background p-6 ${
-                i === 0 ? "lg:col-span-2" : ""
-              }`}
+              className="flex flex-col rounded-3xl border border-border bg-background p-6 transition-all hover:border-[color:var(--sage)] hover:shadow-[var(--shadow-soft)]"
             >
-              <div className="mb-4 inline-flex h-9 w-9 items-center justify-center rounded-full bg-[color:var(--sage)]/20 text-[color:var(--sage-deep)] text-sm">
-                {String(i + 1).padStart(2, "0")}
+              <div className="mb-4 flex items-center justify-between">
+                <div className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[color:var(--sage)]/20 text-[color:var(--sage-deep)] text-xs">
+                  {String(i + 1).padStart(2, "0")}
+                </div>
+                <span
+                  className={`rounded-full px-2.5 py-1 text-[9px] uppercase tracking-[0.18em] ${
+                    m.fixo
+                      ? "bg-[color:var(--sage)]/20 text-[color:var(--sage-deep)]"
+                      : "border border-border text-muted-foreground"
+                  }`}
+                >
+                  {m.fixo ? "Recomendado" : "Exemplo"}
+                </span>
               </div>
               <div className="font-display text-xl">{m.t}</div>
-              <p className="mt-2 text-sm text-muted-foreground">{m.d}</p>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{m.d}</p>
             </div>
           ))}
         </div>
+
+        <p className="mx-auto mt-10 max-w-2xl text-center text-xs uppercase tracking-[0.2em] text-muted-foreground">
+          Conjunto opcional · Definido em conjunto, conforme necessidade
+        </p>
       </div>
     </section>
   );
@@ -541,9 +642,14 @@ function DirecaoVisual() {
               key={p.nome}
               className="overflow-hidden rounded-3xl border border-border bg-card shadow-[var(--shadow-soft)]"
             >
-              <div className="grid h-44 grid-cols-5">
+              <div className="palette-strip h-44">
                 {p.cores.map((c) => (
-                  <div key={c} style={{ backgroundColor: c }} />
+                  <div
+                    key={c}
+                    title={c}
+                    style={{ backgroundColor: c }}
+                    className="cursor-pointer"
+                  />
                 ))}
               </div>
               <div className="p-6">
@@ -608,10 +714,28 @@ function Tipografia() {
               >
                 Espaços que <em>respiram</em>.
               </div>
-              <p className="mt-5 text-sm leading-relaxed text-muted-foreground" style={{ fontFamily: o.body }}>
-                Cada projeto começa por uma escuta atenta. Entender a rotina, a luz, o tempo de cada
-                ambiente. A arquitetura nasce desse cuidado silencioso com o cotidiano.
+              <div
+                className="mt-3 text-xl leading-snug text-foreground/80"
+                style={{ fontFamily: o.display, fontWeight: 400, fontStyle: "italic" }}
+              >
+                Subtítulo em fonte de exibição
+              </div>
+              <p
+                className="mt-5 text-sm leading-relaxed text-muted-foreground"
+                style={{ fontFamily: o.body }}
+              >
+                Texto corrido em <strong style={{ fontFamily: o.body }}>{o.bn}</strong> — o tipo
+                usado para parágrafos, descrições de projeto e conteúdo geral. Combina com{" "}
+                <em style={{ fontFamily: o.display }}>{o.dn}</em> nos títulos.
               </p>
+              <div
+                className="mt-5 flex items-center gap-3 border-t border-border/70 pt-4 text-[11px] uppercase tracking-[0.2em] text-muted-foreground"
+                style={{ fontFamily: o.body }}
+              >
+                <span>Aa Bb Cc 0123</span>
+                <span className="text-border">·</span>
+                <span>Amostra ilustrativa</span>
+              </div>
             </div>
           ))}
         </div>

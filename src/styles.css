@@ -1,7 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500;600&family=Libre+Baskerville:wght@400;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Bodoni+Moda:wght@400;500;600&display=swap");
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500;600&family=Libre+Baskerville:wght@400;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Bodoni+Moda:wght@400;500;600&display=swap");
 
 @custom-variant dark (&:is(.dark *));
 
@@ -198,6 +198,14 @@
   .organic-mask-3 {
     border-radius: 50% 50% 35% 65% / 60% 40% 50% 50%;
   }
+
+  /* Paleta — barras com expansão no hover */
+  .palette-strip { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr; height: 11rem; }
+  .palette-strip > * { transition: flex-grow 500ms cubic-bezier(.2,.8,.2,1), opacity 300ms ease; min-width: 0; }
+  .palette-strip { display: flex; }
+  .palette-strip > * { flex: 1 1 0%; }
+  .palette-strip:hover > * { flex-grow: 0.6; opacity: 0.85; }
+  .palette-strip > *:hover { flex-grow: 3.2; opacity: 1; }
 
   .grain::before {
     content: "";
