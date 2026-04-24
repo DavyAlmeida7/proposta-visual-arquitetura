@@ -523,11 +523,27 @@ function AdminSimples() {
 
 function Opcionais() {
   const mods = [
-    { t: "Blog", d: "Espaço para conteúdos autorais, reforçando autoridade ao longo do tempo." },
-    { t: "Fornecedores", d: "Organização interna de parceiros, lojas e profissionais de confiança." },
-    { t: "Clientes e arquivos", d: "Espaço por cliente, com referências, documentos e materiais." },
-    { t: "Biblioteca de referências", d: "Banco visual interno, organizado por tema ou por projeto." },
-    { t: "Apoio à apresentação", d: "Ferramentas simples para apoiar a montagem de propostas." },
+    {
+      t: "Blog",
+      d: "Espaço para conteúdos autorais — projetos comentados, processos, reflexões. Reforça autoridade ao longo do tempo e ajuda na descoberta orgânica do site.",
+      fixo: true,
+    },
+    {
+      t: "Fornecedores",
+      d: "Cadastro interno de parceiros, lojas e profissionais de confiança, organizados por categoria para consulta rápida no dia a dia.",
+    },
+    {
+      t: "Clientes e arquivos",
+      d: "Um espaço por cliente para reunir referências, documentos e materiais do projeto em um só lugar — sem precisar buscar em pastas espalhadas.",
+    },
+    {
+      t: "Biblioteca de referências",
+      d: "Banco visual interno do escritório, com imagens organizadas por tema, ambiente ou projeto, fácil de consultar quando surgir uma ideia.",
+    },
+    {
+      t: "Apoio à apresentação",
+      d: "Ferramentas simples para montar propostas e apresentações — paletas, materiais, moodboards rápidos a partir do que já está cadastrado.",
+    },
   ];
   return (
     <section className="relative py-28" style={{ background: "var(--gradient-warm)" }}>
@@ -539,29 +555,50 @@ function Opcionais() {
               Módulos complementares, conforme a rotina.
             </h2>
           </div>
-          <p className="max-w-md text-sm text-muted-foreground lg:col-span-5">
-            Além da gestão dos projetos, o site pode receber, no futuro, ferramentas
-            complementares de organização e apoio ao escritório. Estes módulos são opcionais e
-            discutíveis — não fazem parte obrigatória da proposta inicial.
-          </p>
+          <div className="space-y-3 text-sm text-muted-foreground lg:col-span-5">
+            <p>
+              Além da gestão dos projetos, o site pode receber, no futuro, ferramentas
+              complementares de organização e apoio ao escritório.
+            </p>
+            <p>
+              <span className="font-medium text-foreground">O blog</span> é um módulo mais comum e
+              recomendado. Os demais são{" "}
+              <span className="font-medium text-foreground">apenas exemplos</span> de ferramentas
+              internas que poderiam fazer sentido — não são propostas fechadas. O conjunto real
+              seria definido junto, conforme a rotina do escritório.
+            </p>
+          </div>
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
           {mods.map((m, i) => (
             <div
               key={m.t}
-              className={`rounded-3xl border border-border bg-background p-6 ${
-                i === 0 ? "lg:col-span-2" : ""
-              }`}
+              className="flex flex-col rounded-3xl border border-border bg-background p-6 transition-all hover:border-[color:var(--sage)] hover:shadow-[var(--shadow-soft)]"
             >
-              <div className="mb-4 inline-flex h-9 w-9 items-center justify-center rounded-full bg-[color:var(--sage)]/20 text-[color:var(--sage-deep)] text-sm">
-                {String(i + 1).padStart(2, "0")}
+              <div className="mb-4 flex items-center justify-between">
+                <div className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[color:var(--sage)]/20 text-[color:var(--sage-deep)] text-xs">
+                  {String(i + 1).padStart(2, "0")}
+                </div>
+                <span
+                  className={`rounded-full px-2.5 py-1 text-[9px] uppercase tracking-[0.18em] ${
+                    m.fixo
+                      ? "bg-[color:var(--sage)]/20 text-[color:var(--sage-deep)]"
+                      : "border border-border text-muted-foreground"
+                  }`}
+                >
+                  {m.fixo ? "Recomendado" : "Exemplo"}
+                </span>
               </div>
               <div className="font-display text-xl">{m.t}</div>
-              <p className="mt-2 text-sm text-muted-foreground">{m.d}</p>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{m.d}</p>
             </div>
           ))}
         </div>
+
+        <p className="mx-auto mt-10 max-w-2xl text-center text-xs uppercase tracking-[0.2em] text-muted-foreground">
+          Conjunto opcional · Definido em conjunto, conforme necessidade
+        </p>
       </div>
     </section>
   );
