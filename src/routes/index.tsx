@@ -451,12 +451,12 @@ function PaginaProjeto() {
 
 function AdminSimples() {
   const acoes = [
-    "Adicionar projetos novos",
-    "Atualizar projetos existentes",
-    "Remover projetos do portfólio",
-    "Organizar a ordem de exibição",
-    "Marcar projetos em destaque",
-    "Acesso protegido por login",
+    { t: "Adicionar projetos novos", d: "Cadastrar um projeto recém-finalizado em poucos minutos." },
+    { t: "Atualizar projetos existentes", d: "Editar fotos, textos e informações sempre que precisar." },
+    { t: "Remover projetos do portfólio", d: "Tirar do ar projetos que não fazem mais sentido mostrar." },
+    { t: "Organizar a ordem de exibição", d: "Definir manualmente quais aparecem primeiro." },
+    { t: "Marcar projetos em destaque", d: "Selecionar os três projetos que aparecem na home." },
+    { t: "Acesso protegido por login pessoal", d: "Apenas Giovanna entra na área de gestão." },
   ];
   return (
     <section id="admin" className="relative py-28">
@@ -468,9 +468,14 @@ function AdminSimples() {
             <em className="italic text-[color:var(--sage-deep)]">sem complicação</em>.
           </h2>
           <p className="mt-6 max-w-md text-muted-foreground">
-            Uma área protegida por acesso pessoal, pensada para o dia a dia do escritório. Permite
-            adicionar, atualizar e organizar projetos sem depender de outras pessoas — em
-            linguagem simples, sem termos técnicos.
+            Uma área de gestão exclusiva, acessada apenas por Giovanna com login pessoal.
+            É por aqui que novos projetos são adicionados à página{" "}
+            <code className="rounded bg-[color:var(--bone)] px-1.5 py-0.5 text-[12px] text-[color:var(--sage-deep)]">/projetos</code>{" "}
+            do site — autonomia total para atualizar o portfólio sempre que quiser, sem precisar
+            acionar terceiros.
+          </p>
+          <p className="mt-4 max-w-md text-sm text-muted-foreground">
+            O que você cadastra aqui aparece automaticamente no site, no mesmo padrão visual.
           </p>
         </div>
 
@@ -490,16 +495,21 @@ function AdminSimples() {
               <ul className="space-y-2.5">
                 {acoes.map((a, i) => (
                   <li
-                    key={a}
-                    className="flex items-center justify-between rounded-xl border border-border/70 bg-[color:var(--bone)] px-4 py-3 text-sm"
+                    key={a.t}
+                    className="flex items-start justify-between gap-4 rounded-xl border border-border/70 bg-[color:var(--bone)] px-4 py-3 text-sm"
                   >
-                    <span className="flex items-center gap-3">
-                      <span className="grid h-7 w-7 place-items-center rounded-full bg-[color:var(--sage)]/20 text-[color:var(--sage-deep)] text-xs">
+                    <span className="flex items-start gap-3">
+                      <span className="mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-full bg-[color:var(--sage)]/20 text-[color:var(--sage-deep)] text-xs">
                         ✓
                       </span>
-                      {a}
+                      <span>
+                        <span className="block font-medium text-foreground">{a.t}</span>
+                        <span className="block text-xs text-muted-foreground">{a.d}</span>
+                      </span>
                     </span>
-                    <span className="text-xs text-muted-foreground">item {i + 1}</span>
+                    <span className="shrink-0 text-[10px] uppercase tracking-widest text-muted-foreground">
+                      item {String(i + 1).padStart(2, "0")}
+                    </span>
                   </li>
                 ))}
               </ul>
