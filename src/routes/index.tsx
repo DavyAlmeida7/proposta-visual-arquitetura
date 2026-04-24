@@ -397,9 +397,9 @@ function PaginaProjeto() {
 
 function AdminSimples() {
   const acoes = [
-    "Cadastrar projetos novos",
-    "Editar projetos existentes",
-    "Remover projetos",
+    "Adicionar projetos novos",
+    "Atualizar projetos existentes",
+    "Remover projetos do portfólio",
     "Organizar a ordem de exibição",
     "Marcar projetos em destaque",
     "Acesso protegido por login",
@@ -408,14 +408,15 @@ function AdminSimples() {
     <section id="admin" className="relative py-28">
       <div className="mx-auto grid max-w-7xl gap-14 px-6 lg:grid-cols-12 lg:items-center">
         <div className="lg:col-span-5">
-          <SectionLabel>Área administrativa</SectionLabel>
+          <SectionLabel>Área administrativa simples</SectionLabel>
           <h2 className="text-[clamp(2rem,4vw,3.25rem)] font-display leading-[1.05] tracking-tight">
-            Você no controle.<br />
-            <em className="italic text-[color:var(--sage-deep)]">Sem precisar</em> de ninguém.
+            Atualização do portfólio,{" "}
+            <em className="italic text-[color:var(--sage-deep)]">sem complicação</em>.
           </h2>
           <p className="mt-6 max-w-md text-muted-foreground">
-            Uma área protegida, pensada para o seu dia a dia. Sem termos técnicos, sem fricção.
-            Você entra, atualiza e o site reflete na hora.
+            Uma área protegida por acesso pessoal, pensada para o dia a dia do escritório. Permite
+            adicionar, atualizar e organizar projetos sem depender de outras pessoas — em
+            linguagem simples, sem termos técnicos.
           </p>
         </div>
 
@@ -431,7 +432,7 @@ function AdminSimples() {
                 <code className="text-xs text-muted-foreground">/admin</code>
               </div>
 
-              <div className="mb-5 font-display text-xl">Seus projetos</div>
+              <div className="mb-5 font-display text-xl">Gestão dos projetos</div>
               <ul className="space-y-2.5">
                 {acoes.map((a, i) => (
                   <li
@@ -444,7 +445,7 @@ function AdminSimples() {
                       </span>
                       {a}
                     </span>
-                    <span className="text-xs text-muted-foreground">passo {i + 1}</span>
+                    <span className="text-xs text-muted-foreground">item {i + 1}</span>
                   </li>
                 ))}
               </ul>
@@ -458,11 +459,11 @@ function AdminSimples() {
 
 function Opcionais() {
   const mods = [
-    { t: "Blog", d: "Reforço de autoridade e descoberta orgânica, se houver produção de conteúdo útil." },
-    { t: "Fornecedores", d: "Lista organizada de marceneiros, lojas, profissionais de confiança." },
-    { t: "Clientes & arquivos", d: "Cada cliente com seu espaço, documentos e referências." },
-    { t: "Biblioteca de referências", d: "Um banco visual com tudo que te inspira, organizado por tema." },
-    { t: "Paletas & apresentação", d: "Gerador simples para montar paletas e materiais de proposta." },
+    { t: "Blog", d: "Espaço para conteúdos autorais, reforçando autoridade ao longo do tempo." },
+    { t: "Fornecedores", d: "Organização interna de parceiros, lojas e profissionais de confiança." },
+    { t: "Clientes e arquivos", d: "Espaço por cliente, com referências, documentos e materiais." },
+    { t: "Biblioteca de referências", d: "Banco visual interno, organizado por tema ou por projeto." },
+    { t: "Apoio à apresentação", d: "Ferramentas simples para apoiar a montagem de propostas." },
   ];
   return (
     <section className="relative py-28" style={{ background: "var(--gradient-warm)" }}>
@@ -471,13 +472,13 @@ function Opcionais() {
           <div className="lg:col-span-7">
             <SectionLabel>Possibilidades opcionais</SectionLabel>
             <h2 className="text-[clamp(2rem,4vw,3.25rem)] font-display leading-[1.05] tracking-tight">
-              Ferramentas que crescem com você.
+              Módulos complementares, conforme a rotina.
             </h2>
           </div>
           <p className="max-w-md text-sm text-muted-foreground lg:col-span-5">
-            Além da gestão de projetos, a área administrativa também pode receber ferramentas
-            complementares de organização e apoio ao dia a dia do escritório, de acordo com o que
-            fizer sentido para sua rotina.
+            Além da gestão dos projetos, o site pode receber, no futuro, ferramentas
+            complementares de organização e apoio ao escritório. Estes módulos são opcionais e
+            discutíveis — não fazem parte obrigatória da proposta inicial.
           </p>
         </div>
 
