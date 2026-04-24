@@ -274,9 +274,9 @@ function SecoesHome() {
 
 function ProjetosDestaque() {
   const projetos = [
-    { img: project1, nome: "Projeto exemplo 01", cidade: "Cidade ilustrativa", tipo: "Residencial", ano: "Ano" },
-    { img: project2, nome: "Projeto exemplo 02", cidade: "Cidade ilustrativa", tipo: "Reforma", ano: "Ano" },
-    { img: project3, nome: "Projeto exemplo 03", cidade: "Cidade ilustrativa", tipo: "Residencial", ano: "Ano" },
+    { img: project1, cidade: "Cidade ilustrativa", tipo: "Residencial", ano: "Ano", area: "180 m²" },
+    { img: project2, cidade: "Cidade ilustrativa", tipo: "Reforma de cozinha", ano: "Ano", area: "42 m²" },
+    { img: project3, cidade: "Cidade ilustrativa", tipo: "Suíte residencial", ano: "Ano", area: "28 m²" },
   ];
   return (
     <section id="projetos" className="relative py-28">
@@ -300,35 +300,70 @@ function ProjetosDestaque() {
           </span>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-3">
+        <div className="grid gap-7 md:grid-cols-3">
           {projetos.map((p, i) => (
-            <article key={p.nome} className="group">
-              <div
-                className={`relative aspect-[4/5] overflow-hidden ${
-                  i === 1 ? "organic-mask-2" : i === 2 ? "organic-mask-3" : "organic-mask-1"
-                } shadow-[var(--shadow-soft)]`}
-              >
+            <article
+              key={i}
+              role="button"
+              aria-label={`Exemplo de card de projeto ${i + 1} (visual ilustrativo, não clicável)`}
+              className="group relative flex cursor-pointer flex-col overflow-hidden rounded-3xl border border-border/70 bg-card shadow-[var(--shadow-soft)] transition-all duration-500 hover:-translate-y-1.5 hover:border-[color:var(--sage)] hover:shadow-[var(--shadow-float)]"
+            >
+              <div className="relative aspect-[4/5] overflow-hidden">
                 <img
                   src={p.img}
-                  alt={p.nome}
+                  alt={`Projeto exemplo ${String(i + 1).padStart(2, "0")} — ${p.cidade}`}
                   loading="lazy"
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.06]"
                   width={1024}
                   height={1280}
                 />
+                {/* overlay sutil sempre + intensifica no hover */}
+                <div
+                  aria-hidden
+                  className="absolute inset-0 bg-gradient-to-t from-foreground/40 via-foreground/0 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-90"
+                />
+                {/* tag superior — cidade */}
+                <div className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full bg-background/80 px-3 py-1.5 text-[11px] uppercase tracking-[0.18em] text-foreground/80 backdrop-blur">
+                  <span
+                    className="h-1.5 w-1.5 rounded-full"
+                    style={{ background: "var(--gradient-sage)" }}
+                  />
+                  {p.cidade}
+                </div>
+                {/* indicação visual de "abrir" no hover */}
+                <div className="absolute right-4 top-4 grid h-9 w-9 translate-y-2 place-items-center rounded-full bg-background/90 text-foreground opacity-0 backdrop-blur transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 17L17 7M9 7h8v8" /></svg>
+                </div>
+                {/* nome do projeto sobre a imagem */}
+                <div className="absolute bottom-0 left-0 right-0 p-5">
+                  <div className="font-display text-2xl leading-tight text-background">
+                    Projeto exemplo {String(i + 1).padStart(2, "0")}
+                  </div>
+                  <div className="mt-1 text-[12px] tracking-wide text-background/75">
+                    {p.tipo} · {p.ano}
+                  </div>
+                </div>
               </div>
-              <div className="mt-5 flex items-baseline justify-between gap-3">
-                <h3 className="font-display text-2xl leading-tight">{p.nome}</h3>
-                <span className="text-xs text-muted-foreground">{p.ano}</span>
-              </div>
-              <div className="mt-1 text-sm text-muted-foreground">
-                {p.cidade} · {p.tipo}
-              </div>
-              <div className="mt-1 text-[11px] uppercase tracking-widest text-muted-foreground/70">
-                Conteúdo ilustrativo
+              {/* rodapé do card */}
+              <div className="flex items-center justify-between border-t border-border/70 bg-card px-5 py-4 text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+                <span>{p.area}</span>
+                <span>Conteúdo ilustrativo</span>
+                <span className="inline-flex items-center gap-1 text-[color:var(--sage-deep)] opacity-70 transition-opacity group-hover:opacity-100">
+                  Abrir projeto
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 5l7 7-7 7" /></svg>
+                </span>
               </div>
             </article>
           ))}
+        </div>
+
+        <div className="mt-8 flex justify-center">
+          <span
+            aria-hidden
+            className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-5 py-2.5 text-xs uppercase tracking-[0.18em] text-muted-foreground"
+          >
+            Espaço previsto · Ver todos os projetos
+          </span>
         </div>
       </div>
     </section>
