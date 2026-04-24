@@ -642,9 +642,9 @@ function DirecaoVisual() {
     },
   ];
   return (
-    <section id="visual" className="relative py-28">
+    <section id="visual" className="relative py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="mb-14 max-w-2xl">
+        <div className="mb-10 max-w-2xl sm:mb-14">
           <SectionLabel>Direção visual sugerida</SectionLabel>
           <h2 className="text-[clamp(2rem,4vw,3.25rem)] font-display leading-[1.05] tracking-tight">
             Três direções cromáticas para discussão.
@@ -655,7 +655,7 @@ function DirecaoVisual() {
           </p>
         </div>
 
-        <div className="grid gap-8 lg:grid-cols-3">
+        <div className="grid gap-6 sm:gap-8 lg:grid-cols-3">
           {paletas.map((p) => (
             <div
               key={p.nome}
@@ -702,9 +702,9 @@ function Tipografia() {
     { n: "04", display: '"Bodoni Moda", serif', body: '"Inter", sans-serif', dn: "Bodoni Moda", bn: "Inter" },
   ];
   return (
-    <section className="relative py-28" style={{ background: "var(--gradient-warm)" }}>
+    <section className="relative py-20 sm:py-28" style={{ background: "var(--gradient-warm)" }}>
       <div className="mx-auto max-w-7xl px-6">
-        <div className="mb-14 max-w-2xl">
+        <div className="mb-10 max-w-2xl sm:mb-14">
           <SectionLabel>Direções tipográficas</SectionLabel>
           <h2 className="text-[clamp(2rem,4vw,3.25rem)] font-display leading-[1.05] tracking-tight">
             Quatro combinações sugeridas.
@@ -715,20 +715,20 @@ function Tipografia() {
           </p>
         </div>
 
-        <div className="grid gap-5 md:grid-cols-2">
+        <div className="grid gap-4 sm:gap-5 md:grid-cols-2">
           {opcoes.map((o) => (
             <div
               key={o.n}
-              className="rounded-3xl border border-border bg-background p-8 transition-colors hover:border-[color:var(--sage)]"
+              className="rounded-3xl border border-border bg-background p-6 transition-colors hover:border-[color:var(--sage)] sm:p-8"
             >
-              <div className="mb-6 flex items-center justify-between text-xs text-muted-foreground">
+              <div className="mb-5 flex flex-wrap items-center justify-between gap-x-3 gap-y-1 text-[11px] text-muted-foreground sm:mb-6 sm:text-xs">
                 <span className="tracking-widest">OPÇÃO {o.n}</span>
-                <span>
+                <span className="text-right">
                   {o.dn} <span className="text-[color:var(--sage-deep)]">+</span> {o.bn}
                 </span>
               </div>
               <div
-                className="text-5xl leading-none tracking-tight"
+                className="text-[2.25rem] leading-none tracking-tight sm:text-5xl"
                 style={{ fontFamily: o.display, fontWeight: 500 }}
               >
                 Espaços que <em>respiram</em>.
