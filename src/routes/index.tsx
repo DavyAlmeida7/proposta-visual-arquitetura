@@ -298,9 +298,9 @@ function ProjetosDestaque() {
     { img: project3, cidade: "Cidade ilustrativa", tipo: "Suíte residencial", ano: "Ano", area: "28 m²" },
   ];
   return (
-    <section id="projetos" className="relative py-28">
+    <section id="projetos" className="relative py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="mb-14 flex flex-wrap items-end justify-between gap-6">
+        <div className="mb-10 flex flex-wrap items-end justify-between gap-6 sm:mb-14">
           <div>
             <SectionLabel>Projetos em destaque</SectionLabel>
             <h2 className="text-[clamp(2rem,4vw,3.25rem)] font-display leading-[1.05] tracking-tight">
@@ -319,7 +319,7 @@ function ProjetosDestaque() {
           </span>
         </div>
 
-        <div className="grid gap-7 md:grid-cols-3">
+        <div className="grid gap-5 sm:gap-7 md:grid-cols-3">
           {projetos.map((p, i) => (
             <article
               key={i}
