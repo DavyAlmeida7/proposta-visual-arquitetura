@@ -31,64 +31,83 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 
 function Hero() {
   return (
-    <section id="topo" className="relative overflow-hidden pt-32 pb-24 sm:pt-40 sm:pb-32">
+    <section id="topo" className="relative overflow-hidden pt-28 pb-20 sm:pt-40 sm:pb-32">
+      {/* Imagem de fundo no mobile (atrás do conteúdo) */}
+      <div aria-hidden className="pointer-events-none absolute inset-0 lg:hidden">
+        <img
+          src={heroImg}
+          alt=""
+          className="h-full w-full object-cover opacity-25"
+          width={1536}
+          height={1280}
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(180deg, var(--background) 0%, color-mix(in oklab, var(--background) 70%, transparent) 35%, color-mix(in oklab, var(--background) 80%, transparent) 70%, var(--background) 100%)",
+          }}
+        />
+      </div>
+
       <div
         aria-hidden
-        className="pointer-events-none absolute -left-32 top-20 h-96 w-96 rounded-full opacity-50 blur-3xl"
+        className="pointer-events-none absolute -left-32 top-20 h-96 w-96 rounded-full opacity-50 blur-3xl hidden lg:block"
         style={{ background: "radial-gradient(closest-side, var(--sage), transparent)" }}
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute -right-24 bottom-0 h-80 w-80 rounded-full opacity-40 blur-3xl"
+        className="pointer-events-none absolute -right-24 bottom-0 h-80 w-80 rounded-full opacity-40 blur-3xl hidden lg:block"
         style={{ background: "radial-gradient(closest-side, var(--sand), transparent)" }}
       />
 
-      <div className="mx-auto grid max-w-7xl items-center gap-14 px-6 lg:grid-cols-12">
+      <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-6 sm:gap-14 lg:grid-cols-12">
         <div className="lg:col-span-7">
           <SectionLabel>Apresentação conceitual · Giovanna Caires</SectionLabel>
-          <h1 className="text-[clamp(2.6rem,6vw,5rem)] font-display leading-[1.02] tracking-tight text-foreground">
+          <h1 className="text-[clamp(2.1rem,6vw,5rem)] font-display leading-[1.04] tracking-tight text-foreground">
             Proposta visual para o{" "}
             <em className="font-medium italic text-[color:var(--sage-deep)]">site-portfólio</em>{" "}
             de Giovanna Caires.
           </h1>
-          <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+          <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-muted-foreground sm:mt-6 sm:text-lg">
             Este documento reúne a estrutura, a linguagem e a direção estética pensadas para
             apresentar sua presença digital — um ponto de partida para discussão, não uma versão
             final.
           </p>
 
-          <div className="mt-9 flex flex-wrap items-center gap-3">
+          <div className="mt-8 flex flex-row flex-wrap items-center gap-2.5 sm:gap-3">
             <span
               aria-hidden
-              className="inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3.5 text-sm font-medium text-background"
+              className="inline-flex items-center gap-2 rounded-full bg-foreground px-4 py-2.5 text-[12px] font-medium text-background sm:px-6 sm:py-3.5 sm:text-sm"
             >
               Estrutura proposta
             </span>
             <span
               aria-hidden
-              className="inline-flex items-center gap-2 rounded-full border border-border bg-background/60 px-6 py-3.5 text-sm font-medium text-foreground backdrop-blur"
+              className="inline-flex items-center gap-2 rounded-full border border-border bg-background/60 px-4 py-2.5 text-[12px] font-medium text-foreground backdrop-blur sm:px-6 sm:py-3.5 sm:text-sm"
             >
               Direção visual sugerida
             </span>
           </div>
 
-          <dl className="mt-12 grid max-w-md grid-cols-3 gap-6 border-t border-border/60 pt-6">
+          <dl className="mt-10 grid max-w-md grid-cols-3 gap-4 border-t border-border/60 pt-6 sm:mt-12 sm:gap-6">
             <div>
               <dt className="text-[11px] uppercase tracking-widest text-muted-foreground">Foco</dt>
-              <dd className="mt-1 font-display text-xl">Autoridade</dd>
+              <dd className="mt-1 font-display text-lg sm:text-xl">Autoridade</dd>
             </div>
             <div>
               <dt className="text-[11px] uppercase tracking-widest text-muted-foreground">Conteúdo</dt>
-              <dd className="mt-1 font-display text-xl">Portfólio</dd>
+              <dd className="mt-1 font-display text-lg sm:text-xl">Portfólio</dd>
             </div>
             <div>
               <dt className="text-[11px] uppercase tracking-widest text-muted-foreground">Tom</dt>
-              <dd className="mt-1 font-display text-xl">Editorial</dd>
+              <dd className="mt-1 font-display text-lg sm:text-xl">Editorial</dd>
             </div>
           </dl>
         </div>
 
-        <div className="relative lg:col-span-5">
+        {/* Imagem em destaque visível apenas em lg+ (no mobile vira background) */}
+        <div className="relative hidden lg:col-span-5 lg:block">
           <div className="relative aspect-[4/5] overflow-hidden organic-mask-1 shadow-[var(--shadow-float)]">
             <img
               src={heroImg}
