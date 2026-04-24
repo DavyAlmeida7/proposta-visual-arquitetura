@@ -478,8 +478,8 @@ function AdminSimples() {
     { t: "Acesso protegido por login pessoal", d: "Apenas Giovanna entra na área de gestão." },
   ];
   return (
-    <section id="admin" className="relative py-28">
-      <div className="mx-auto grid max-w-7xl gap-14 px-6 lg:grid-cols-12 lg:items-center">
+    <section id="admin" className="relative py-20 sm:py-28">
+      <div className="mx-auto grid max-w-7xl gap-10 px-6 sm:gap-14 lg:grid-cols-12 lg:items-center">
         <div className="lg:col-span-5">
           <SectionLabel>Área administrativa simples</SectionLabel>
           <h2 className="text-[clamp(2rem,4vw,3.25rem)] font-display leading-[1.05] tracking-tight">
@@ -500,7 +500,7 @@ function AdminSimples() {
 
         <div className="lg:col-span-7">
           <div className="rounded-[2rem] border border-border bg-foreground p-2 shadow-[var(--shadow-float)]">
-            <div className="rounded-[1.6rem] bg-background p-6 sm:p-8">
+            <div className="rounded-[1.6rem] bg-background p-5 sm:p-8">
               <div className="mb-6 flex items-center justify-between border-b border-border pb-4">
                 <div className="flex items-center gap-2">
                   <span className="h-2.5 w-2.5 rounded-full bg-[color:var(--clay)]/70" />
@@ -515,7 +515,7 @@ function AdminSimples() {
                 {acoes.map((a, i) => (
                   <li
                     key={a.t}
-                    className="flex items-start justify-between gap-4 rounded-xl border border-border/70 bg-[color:var(--bone)] px-4 py-3 text-sm"
+                    className="flex items-start justify-between gap-3 rounded-xl border border-border/70 bg-[color:var(--bone)] px-3.5 py-3 text-sm sm:gap-4 sm:px-4"
                   >
                     <span className="flex items-start gap-3">
                       <span className="mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-full bg-[color:var(--sage)]/20 text-[color:var(--sage-deep)] text-xs">
@@ -526,7 +526,7 @@ function AdminSimples() {
                         <span className="block text-xs text-muted-foreground">{a.d}</span>
                       </span>
                     </span>
-                    <span className="shrink-0 text-[10px] uppercase tracking-widest text-muted-foreground">
+                    <span className="hidden shrink-0 text-[10px] uppercase tracking-widest text-muted-foreground sm:inline">
                       item {String(i + 1).padStart(2, "0")}
                     </span>
                   </li>
