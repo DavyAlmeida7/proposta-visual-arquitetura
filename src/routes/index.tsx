@@ -404,9 +404,9 @@ function PaginaProjeto() {
     { t: "Antes e depois (opcional)", d: "Comparativo visual quando fizer sentido apresentar a transformação." },
   ];
   return (
-    <section id="projeto" className="relative py-28" style={{ background: "var(--gradient-warm)" }}>
+    <section id="projeto" className="relative py-20 sm:py-28" style={{ background: "var(--gradient-warm)" }}>
       <div className="mx-auto max-w-7xl px-6">
-        <div className="mb-14 max-w-2xl">
+        <div className="mb-10 max-w-2xl sm:mb-14">
           <SectionLabel>Página individual de projeto</SectionLabel>
           <h2 className="text-[clamp(2rem,4vw,3.25rem)] font-display leading-[1.05] tracking-tight">
             Como cada projeto pode ser apresentado.
@@ -418,7 +418,7 @@ function PaginaProjeto() {
         </div>
 
         <div className="overflow-hidden rounded-[2rem] border border-border bg-background shadow-[var(--shadow-float)]">
-          <div className="relative aspect-[16/8]">
+          <div className="relative aspect-[4/3] sm:aspect-[16/8]">
             <img
               src={project1}
               alt="Mock-up de página individual de projeto"
@@ -426,17 +426,17 @@ function PaginaProjeto() {
               className="h-full w-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-foreground/40 via-transparent to-transparent" />
-            <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between text-background sm:bottom-10 sm:left-10 sm:right-10">
+            <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between text-background sm:bottom-10 sm:left-10 sm:right-10">
               <div>
                 <div className="text-[11px] tracking-widest opacity-80">EXEMPLO DE PROJETO</div>
-                <h3 className="mt-2 font-display text-3xl sm:text-5xl">Nome do projeto</h3>
+                <h3 className="mt-2 font-display text-2xl sm:text-5xl">Nome do projeto</h3>
               </div>
               <div className="hidden text-right text-xs opacity-80 sm:block">galeria de fotos</div>
             </div>
           </div>
 
-          <div className="grid gap-10 p-8 sm:p-12 lg:grid-cols-12">
-            <dl className="space-y-5 lg:col-span-3">
+          <div className="grid gap-8 p-6 sm:gap-10 sm:p-12 lg:grid-cols-12">
+            <dl className="grid grid-cols-2 gap-x-4 gap-y-5 sm:grid-cols-4 lg:col-span-3 lg:grid-cols-1 lg:space-y-0">
               {campos.map((c) => (
                 <div key={c.l}>
                   <dt className="text-[11px] uppercase tracking-widest text-muted-foreground">
