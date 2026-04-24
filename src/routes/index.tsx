@@ -525,13 +525,13 @@ function DirecaoVisual() {
     <section id="visual" className="relative py-28">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-14 max-w-2xl">
-          <SectionLabel>Direção visual</SectionLabel>
+          <SectionLabel>Direção visual sugerida</SectionLabel>
           <h2 className="text-[clamp(2rem,4vw,3.25rem)] font-display leading-[1.05] tracking-tight">
-            Três caminhos cromáticos.
+            Três direções cromáticas para discussão.
           </h2>
           <p className="mt-4 text-muted-foreground">
-            Bases neutras e quentes, com um acento de cor para conduzir o olhar. Escolhemos juntas
-            a que mais traduz seu trabalho.
+            Paletas pensadas com base em tons naturais, verdes suaves, madeira e contraste
+            elegante. Servem como ponto de partida para a escolha — não como definição final.
           </p>
         </div>
 
@@ -580,10 +580,14 @@ function Tipografia() {
     <section className="relative py-28" style={{ background: "var(--gradient-warm)" }}>
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-14 max-w-2xl">
-          <SectionLabel>Tipografia</SectionLabel>
+          <SectionLabel>Direções tipográficas</SectionLabel>
           <h2 className="text-[clamp(2rem,4vw,3.25rem)] font-display leading-[1.05] tracking-tight">
-            Quatro pares para experimentar.
+            Quatro combinações sugeridas.
           </h2>
+          <p className="mt-4 text-muted-foreground">
+            Pares pensados para transmitir sofisticação, clareza e personalidade. São referências
+            de linguagem visual — a escolha final é definida em conjunto.
+          </p>
         </div>
 
         <div className="grid gap-5 md:grid-cols-2">
@@ -618,9 +622,9 @@ function Tipografia() {
 
 function PresencaLocal() {
   const canais = [
-    { t: "Google Business", d: "Apareça em buscas locais com fotos atualizadas e avaliações reais." },
-    { t: "WhatsApp", d: "Botão de contato direto no site, com mensagem pré-preenchida." },
-    { t: "Instagram", d: "Continua sendo a vitrine do dia a dia — agora apoiando o portfólio." },
+    { t: "Google Business Profile", d: "Apoia a presença em buscas locais, com fotos e informações do escritório." },
+    { t: "WhatsApp", d: "Espaço previsto no site para contato direto pelo canal de preferência." },
+    { t: "Instagram", d: "Segue como vitrine do dia a dia, conectado ao portfólio no site." },
   ];
   return (
     <section className="relative py-28">
@@ -639,11 +643,12 @@ function PresencaLocal() {
           <div className="lg:col-span-7">
             <SectionLabel>Presença local</SectionLabel>
             <h2 className="text-[clamp(2rem,4vw,3.25rem)] font-display leading-[1.05] tracking-tight">
-              O site não trabalha sozinho.
+              O site dialoga com os canais existentes.
             </h2>
             <p className="mt-5 max-w-lg text-muted-foreground">
-              Ele se conecta aos canais que você já usa, criando um ecossistema discreto e
-              consistente em torno do seu nome.
+              A proposta considera o site como parte de um conjunto: WhatsApp, Instagram e Google
+              Business Profile seguem com seus papéis, com o portfólio funcionando como ponto de
+              referência.
             </p>
 
             <div className="mt-8 space-y-3">
