@@ -1,6 +1,7 @@
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500;600&family=Libre+Baskerville:wght@400;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Bodoni+Moda:wght@400;500;600&display=swap");
 
 @custom-variant dark (&:is(.dark *));
 
@@ -63,25 +64,52 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
+  /* Base clara, editorial, acolhedora */
+  --background: oklch(0.984 0.005 80);          /* off-white quente */
+  --foreground: oklch(0.22 0.012 260);          /* tinta suave */
+  --card: oklch(0.995 0.004 80);
+  --card-foreground: oklch(0.22 0.012 260);
+  --popover: oklch(0.995 0.004 80);
+  --popover-foreground: oklch(0.22 0.012 260);
+
+  /* Verde sálvia — cor principal da apresentação */
+  --primary: oklch(0.62 0.045 145);
+  --primary-foreground: oklch(0.99 0.004 80);
+
+  /* Bege/areia */
+  --secondary: oklch(0.93 0.018 75);
+  --secondary-foreground: oklch(0.28 0.015 260);
+
+  --muted: oklch(0.955 0.012 80);
+  --muted-foreground: oklch(0.5 0.015 260);
+
+  /* Terra suave */
+  --accent: oklch(0.6 0.085 50);
+  --accent-foreground: oklch(0.99 0.004 80);
+
+  --destructive: oklch(0.55 0.18 28);
+  --destructive-foreground: oklch(0.99 0.004 80);
+
+  --border: oklch(0.9 0.012 80);
+  --input: oklch(0.9 0.012 80);
+  --ring: oklch(0.62 0.045 145);
+
+  /* Tokens autorais */
+  --ink: oklch(0.18 0.012 260);
+  --sage: oklch(0.72 0.045 145);
+  --sage-deep: oklch(0.55 0.04 145);
+  --sand: oklch(0.9 0.022 75);
+  --bone: oklch(0.96 0.01 80);
+  --clay: oklch(0.55 0.095 50);
+
+  --gradient-warm: linear-gradient(180deg, oklch(0.985 0.006 80) 0%, oklch(0.96 0.012 80) 100%);
+  --gradient-sage: linear-gradient(135deg, oklch(0.72 0.045 145) 0%, oklch(0.6 0.04 145) 100%);
+  --shadow-soft: 0 1px 2px oklch(0.2 0.01 260 / 0.04), 0 8px 24px oklch(0.2 0.01 260 / 0.06);
+  --shadow-float: 0 2px 8px oklch(0.2 0.01 260 / 0.06), 0 20px 50px oklch(0.2 0.01 260 / 0.08);
+
+  --font-display: "Cormorant Garamond", "Playfair Display", ui-serif, Georgia, serif;
+  --font-body: "Manrope", ui-sans-serif, system-ui, sans-serif;
+
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -140,5 +168,44 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-body);
+    font-feature-settings: "ss01", "cv11";
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer utilities {
+  .font-display { font-family: var(--font-display); }
+  .font-body { font-family: var(--font-body); }
+
+  .blob-mask {
+    -webkit-mask-image: radial-gradient(closest-side, #000 98%, transparent 100%);
+    mask-image: radial-gradient(closest-side, #000 98%, transparent 100%);
+    border-radius: 48% 52% 60% 40% / 45% 55% 45% 55%;
+  }
+  .organic-mask-1 {
+    border-radius: 60% 40% 55% 45% / 50% 60% 40% 50%;
+  }
+  .organic-mask-2 {
+    border-radius: 40% 60% 45% 55% / 55% 45% 60% 40%;
+  }
+  .organic-mask-3 {
+    border-radius: 50% 50% 35% 65% / 60% 40% 50% 50%;
+  }
+
+  .grain::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.04;
+    background-image: radial-gradient(oklch(0.2 0.01 260) 1px, transparent 1px);
+    background-size: 3px 3px;
   }
 }
