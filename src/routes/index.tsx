@@ -153,7 +153,7 @@ function PorQueAgora() {
     },
   ];
   return (
-    <section id="proposta" className="relative py-28">
+    <section id="proposta" className="relative py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-5">
@@ -194,9 +194,9 @@ function Estrutura() {
     { path: "/blog", label: "Blog (opcional)", desc: "Espaço para conteúdos autorais e reforço de autoridade." },
   ];
   return (
-    <section id="estrutura" className="relative py-28">
+    <section id="estrutura" className="relative py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="mb-14 max-w-2xl">
+        <div className="mb-10 max-w-2xl sm:mb-14">
           <SectionLabel>Estrutura sugerida do site</SectionLabel>
           <h2 className="text-[clamp(2rem,4vw,3.25rem)] font-display leading-[1.05] tracking-tight">
             Exemplo de como o site poderia ser organizado.
@@ -211,18 +211,18 @@ function Estrutura() {
           {routes.map((r, i) => (
             <div
               key={r.path}
-              className={`grid grid-cols-12 items-center gap-4 px-6 py-6 sm:px-10 ${
+              className={`grid grid-cols-12 items-center gap-x-4 gap-y-1.5 px-5 py-5 sm:px-10 sm:py-6 ${
                 i !== routes.length - 1 ? "border-b border-border/70" : ""
               } transition-colors hover:bg-[color:var(--bone)]`}
             >
               <div className="col-span-12 sm:col-span-1 text-xs tracking-widest text-muted-foreground">
                 0{i + 1}
               </div>
-              <code className="col-span-12 sm:col-span-4 font-mono text-sm text-[color:var(--sage-deep)]">
+              <code className="col-span-12 sm:col-span-4 font-mono text-[13px] text-[color:var(--sage-deep)] sm:text-sm">
                 {r.path}
               </code>
-              <div className="col-span-12 sm:col-span-3 font-display text-xl">{r.label}</div>
-              <div className="col-span-12 sm:col-span-4 text-sm text-muted-foreground">{r.desc}</div>
+              <div className="col-span-12 sm:col-span-3 font-display text-lg sm:text-xl">{r.label}</div>
+              <div className="col-span-12 sm:col-span-4 text-[13px] text-muted-foreground sm:text-sm">{r.desc}</div>
             </div>
           ))}
         </div>
