@@ -1,5 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { FloatingNav } from "@/components/FloatingNav";
+import {
+  Layout,
+  LayoutGrid,
+  Briefcase,
+  Workflow,
+  User,
+  MessageSquareQuote,
+  HelpCircle,
+  Mail,
+} from "lucide-react";
 import heroImg from "@/assets/hero-architecture.jpg";
 import project1 from "@/assets/project-1.jpg";
 import project2 from "@/assets/project-2.jpg";
