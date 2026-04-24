@@ -696,43 +696,44 @@ function CTAFinal() {
 
           <div className="relative">
             <div className="text-[11px] uppercase tracking-[0.3em] text-[color:var(--sage)]">
-              Próximo passo
+              Fechamento da proposta
             </div>
             <h2 className="mt-5 font-display text-[clamp(2.2rem,5vw,4rem)] leading-[1.05] tracking-tight text-background">
-              Vamos lapidar essa<br />
-              proposta <em className="italic text-[color:var(--sage)]">juntas</em>?
+              Uma conversa curta para{" "}
+              <em className="italic text-[color:var(--sage)]">lapidar</em> a proposta.
             </h2>
             <p className="mx-auto mt-6 max-w-xl text-base text-background/70">
-              Uma conversa curta, sem compromisso, para alinhar escopo, prazos e o caminho visual
-              que mais combina com o seu trabalho.
+              Esta apresentação é um ponto de partida. A próxima etapa é uma conversa para ajustar
+              estrutura, conteúdo e direção visual ao que faz mais sentido para o trabalho de
+              Giovanna Caires.
             </p>
 
             <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-              <a
-                href="mailto:ola@estudio.com"
-                className="inline-flex items-center gap-2 rounded-full bg-background px-7 py-4 text-sm font-medium text-foreground transition-transform hover:scale-[1.02]"
+              <span
+                aria-hidden
+                className="inline-flex items-center gap-2 rounded-full bg-background px-7 py-4 text-sm font-medium text-foreground"
               >
-                Agendar conversa →
-              </a>
-              <a
-                href="#topo"
-                className="inline-flex items-center gap-2 rounded-full border border-background/30 px-7 py-4 text-sm text-background transition-colors hover:bg-background/10"
+                Espaço previsto para contato
+              </span>
+              <span
+                aria-hidden
+                className="inline-flex items-center gap-2 rounded-full border border-background/30 px-7 py-4 text-sm text-background"
               >
-                Revisar a proposta
-              </a>
+                WhatsApp · Instagram · e-mail
+              </span>
             </div>
           </div>
         </div>
 
         <footer className="mt-12 flex flex-wrap items-center justify-between gap-4 text-xs text-muted-foreground">
-          <div>© Apresentação de proposta · Documento confidencial</div>
+          <div>Apresentação visual de proposta · Material conceitual para Giovanna Caires</div>
           <div className="flex items-center gap-2">
             <span
               aria-hidden
               className="inline-block h-4 w-4 rounded-full"
               style={{ background: "var(--gradient-sage)" }}
             />
-            estúdio
+            Documento de referência
           </div>
         </footer>
       </div>
