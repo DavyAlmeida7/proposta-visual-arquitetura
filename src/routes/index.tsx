@@ -255,9 +255,9 @@ function SecoesHome() {
 
 function ProjetosDestaque() {
   const projetos = [
-    { img: project1, nome: "Apartamento Curva Suave", cidade: "São Paulo", tipo: "Residencial", ano: "2024" },
-    { img: project2, nome: "Cozinha Travertino", cidade: "Campinas", tipo: "Reforma", ano: "2024" },
-    { img: project3, nome: "Suíte Linho & Madeira", cidade: "Florianópolis", tipo: "Residencial", ano: "2023" },
+    { img: project1, nome: "Projeto exemplo 01", cidade: "Cidade ilustrativa", tipo: "Residencial", ano: "Ano" },
+    { img: project2, nome: "Projeto exemplo 02", cidade: "Cidade ilustrativa", tipo: "Reforma", ano: "Ano" },
+    { img: project3, nome: "Projeto exemplo 03", cidade: "Cidade ilustrativa", tipo: "Residencial", ano: "Ano" },
   ];
   return (
     <section id="projetos" className="relative py-28">
@@ -266,15 +266,19 @@ function ProjetosDestaque() {
           <div>
             <SectionLabel>Projetos em destaque</SectionLabel>
             <h2 className="text-[clamp(2rem,4vw,3.25rem)] font-display leading-[1.05] tracking-tight">
-              Cada projeto, sua própria página.
+              Três projetos em destaque na home.
             </h2>
+            <p className="mt-4 max-w-xl text-muted-foreground">
+              A home pode trazer uma curadoria de três projetos principais. A página de projetos
+              reúne todo o portfólio com filtros, e cada projeto pode abrir uma página própria.
+            </p>
           </div>
-          <a
-            href="#projeto"
-            className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm transition-colors hover:bg-foreground hover:text-background"
+          <span
+            aria-hidden
+            className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-xs uppercase tracking-[0.18em] text-muted-foreground"
           >
-            Ver todos os projetos →
-          </a>
+            Exemplo de navegação
+          </span>
         </div>
 
         <div className="grid gap-8 md:grid-cols-3">
@@ -301,6 +305,9 @@ function ProjetosDestaque() {
               <div className="mt-1 text-sm text-muted-foreground">
                 {p.cidade} · {p.tipo}
               </div>
+              <div className="mt-1 text-[11px] uppercase tracking-widest text-muted-foreground/70">
+                Conteúdo ilustrativo
+              </div>
             </article>
           ))}
         </div>
@@ -311,17 +318,17 @@ function ProjetosDestaque() {
 
 function PaginaProjeto() {
   const campos = [
-    { l: "Nome", v: "Casa Jardim Botânico" },
-    { l: "Cidade", v: "São Paulo, SP" },
+    { l: "Nome", v: "Nome do projeto" },
+    { l: "Cidade", v: "Cidade ilustrativa" },
     { l: "Tipo", v: "Residencial · Reforma" },
-    { l: "Ano", v: "2024" },
+    { l: "Ano", v: "Ano" },
   ];
   const blocos = [
-    { t: "Contexto", d: "Apartamento de 110m² em prédio dos anos 80, com cozinha fechada e iluminação escassa." },
-    { t: "Necessidade", d: "Integrar os ambientes sociais, ganhar luz natural e criar um espaço para receber." },
-    { t: "Solução", d: "Demolição estratégica, paleta neutra com madeira clara e curadoria de mobiliário sob medida." },
-    { t: "Planta (opcional)", d: "Diagrama simples do antes e depois para reforçar a transformação." },
-    { t: "Antes & depois (opcional)", d: "Comparativo lado a lado das áreas mais impactantes da reforma." },
+    { t: "Contexto", d: "Espaço para um breve resumo do projeto, ambiente e ponto de partida." },
+    { t: "Necessidade", d: "O que o cliente buscava — pode ser preenchido caso a caso." },
+    { t: "Solução proposta", d: "Direção do projeto e principais decisões de arquitetura e interiores." },
+    { t: "Planta (opcional)", d: "Pode receber uma planta esquemática para apoiar a leitura do projeto." },
+    { t: "Antes e depois (opcional)", d: "Comparativo visual quando fizer sentido apresentar a transformação." },
   ];
   return (
     <section id="projeto" className="relative py-28" style={{ background: "var(--gradient-warm)" }}>
@@ -329,8 +336,12 @@ function PaginaProjeto() {
         <div className="mb-14 max-w-2xl">
           <SectionLabel>Página individual de projeto</SectionLabel>
           <h2 className="text-[clamp(2rem,4vw,3.25rem)] font-display leading-[1.05] tracking-tight">
-            A história por trás de cada espaço.
+            Como cada projeto pode ser apresentado.
           </h2>
+          <p className="mt-4 text-muted-foreground">
+            Estrutura sugerida: galeria de abertura, dados do projeto e blocos curtos com contexto,
+            necessidade e solução proposta. Conteúdo abaixo é ilustrativo.
+          </p>
         </div>
 
         <div className="overflow-hidden rounded-[2rem] border border-border bg-background shadow-[var(--shadow-float)]">
@@ -344,10 +355,10 @@ function PaginaProjeto() {
             <div className="absolute inset-0 bg-gradient-to-t from-foreground/40 via-transparent to-transparent" />
             <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between text-background sm:bottom-10 sm:left-10 sm:right-10">
               <div>
-                <div className="text-[11px] tracking-widest opacity-80">PROJETO 04</div>
-                <h3 className="mt-2 font-display text-3xl sm:text-5xl">Casa Jardim Botânico</h3>
+                <div className="text-[11px] tracking-widest opacity-80">EXEMPLO DE PROJETO</div>
+                <h3 className="mt-2 font-display text-3xl sm:text-5xl">Nome do projeto</h3>
               </div>
-              <div className="hidden text-right text-xs opacity-80 sm:block">galeria · 14 fotos</div>
+              <div className="hidden text-right text-xs opacity-80 sm:block">galeria de fotos</div>
             </div>
           </div>
 
@@ -370,12 +381,12 @@ function PaginaProjeto() {
                   <p className="mt-1 text-sm text-muted-foreground">{b.d}</p>
                 </div>
               ))}
-              <a
-                href="#contato"
-                className="mt-2 inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-3 text-sm text-background transition-colors hover:bg-foreground/90"
+              <span
+                aria-hidden
+                className="mt-2 inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-3 text-sm text-background"
               >
-                Quero algo assim →
-              </a>
+                Exemplo de fechamento da página
+              </span>
             </div>
           </div>
         </div>
