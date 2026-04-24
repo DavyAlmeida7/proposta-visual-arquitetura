@@ -105,22 +105,22 @@ function PorQueAgora() {
     {
       n: "01",
       t: "Identidade própria",
-      d: "O Instagram entrega seu trabalho dentro do visual de outra empresa. Um site é o seu espaço.",
+      d: "Um espaço com a sua linguagem visual, fora do layout padrão de redes sociais.",
     },
     {
       n: "02",
-      t: "Navegação que respeita o projeto",
-      d: "Cada projeto pode ter contexto, fotos, planta e processo — não só uma sequência de quadradinhos.",
+      t: "Navegação clara",
+      d: "Cada projeto pode ter contexto, fotos e detalhes — apresentado em um fluxo organizado.",
     },
     {
       n: "03",
-      t: "Apresentação mais profissional",
-      d: "Quando alguém te indica, recebe um link sério. Não um perfil concorrendo com memes.",
+      t: "Apresentação profissional",
+      d: "Um endereço próprio para compartilhar em indicações, propostas e contatos comerciais.",
     },
     {
       n: "04",
-      t: "Organização real dos projetos",
-      d: "Por categoria, ano ou destaque. Você decide o que aparece primeiro.",
+      t: "Portfólio organizado",
+      d: "Projetos agrupados por categoria, ano ou destaque, com a ordem definida pela arquiteta.",
     },
   ];
   return (
@@ -128,14 +128,14 @@ function PorQueAgora() {
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <SectionLabel>Por que agora</SectionLabel>
+            <SectionLabel>Bloco de proposta</SectionLabel>
             <h2 className="text-[clamp(2rem,4vw,3.25rem)] font-display leading-[1.05] tracking-tight">
-              O Instagram é importante.<br />
-              Mas <em className="italic text-[color:var(--sage-deep)]">não é</em> seu portfólio.
+              Um site-portfólio com{" "}
+              <em className="italic text-[color:var(--sage-deep)]">identidade própria</em>.
             </h2>
             <p className="mt-6 max-w-md text-muted-foreground">
-              Ele continua sendo a porta de entrada. O site é o lugar onde a conversa amadurece —
-              quando o cliente decide se vai te procurar de verdade.
+              A proposta reúne quatro pilares: identidade visual autoral, apresentação estratégica
+              dos projetos, gestão simples de atualização e foco em imagem profissional.
             </p>
           </div>
           <ul className="grid gap-5 sm:grid-cols-2 lg:col-span-7">
@@ -158,20 +158,24 @@ function PorQueAgora() {
 
 function Estrutura() {
   const routes = [
-    { path: "/", label: "Home", desc: "Apresentação geral, projetos em destaque, sobre, contato." },
-    { path: "/projetos", label: "Lista de projetos", desc: "Galeria filtrável por tipo, ano ou categoria." },
-    { path: "/projeto/[slug]", label: "Página individual", desc: "Cada projeto com sua história e fotos." },
-    { path: "/admin", label: "Área administrativa", desc: "Acesso protegido para você gerenciar tudo." },
-    { path: "/blog", label: "Blog", desc: "Opcional. Para reforço de autoridade e descoberta orgânica." },
+    { path: "/", label: "Home proposta", desc: "Abertura, projetos em destaque, sobre e contato." },
+    { path: "/projetos", label: "Página de projetos", desc: "Reúne o portfólio com filtros por tipo, ano ou categoria." },
+    { path: "/projeto/[slug]", label: "Página individual", desc: "Cada projeto em uma página própria, com galeria e detalhes." },
+    { path: "/admin", label: "Gestão simples", desc: "Acesso protegido para atualizar projetos e ordem de exibição." },
+    { path: "/blog", label: "Blog (opcional)", desc: "Espaço para conteúdos autorais e reforço de autoridade." },
   ];
   return (
     <section id="estrutura" className="relative py-28">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-14 max-w-2xl">
-          <SectionLabel>Estrutura principal</SectionLabel>
+          <SectionLabel>Estrutura sugerida do site</SectionLabel>
           <h2 className="text-[clamp(2rem,4vw,3.25rem)] font-display leading-[1.05] tracking-tight">
-            Cinco rotas. Uma experiência inteira.
+            Exemplo de como o site poderia ser organizado.
           </h2>
+          <p className="mt-4 text-muted-foreground">
+            Cinco rotas que cobrem apresentação, portfólio, detalhe de cada projeto e gestão
+            interna. Estrutura aberta a ajustes durante o desenvolvimento.
+          </p>
         </div>
 
         <div className="overflow-hidden rounded-3xl border border-border bg-card shadow-[var(--shadow-soft)]">
@@ -200,28 +204,28 @@ function Estrutura() {
 
 function SecoesHome() {
   const blocks = [
-    { t: "Hero", d: "Primeira impressão. Imagem forte e proposta clara." },
-    { t: "Projetos", d: "Curadoria dos trabalhos em destaque." },
-    { t: "Serviços", d: "O que você entrega e como." },
-    { t: "Processo", d: "Como é trabalhar com você, passo a passo." },
-    { t: "Sobre mim", d: "Sua história, sua visão, seu olhar." },
-    { t: "Depoimentos", d: "Vozes reais de quem já contratou (quando houver)." },
-    { t: "FAQ", d: "Antecipa as dúvidas mais comuns antes do contato." },
-    { t: "Contato", d: "CTA final, formulário e canais diretos." },
+    { t: "Hero", d: "Abertura visual com imagem e apresentação resumida." },
+    { t: "Projetos", d: "Seleção de três projetos principais em destaque." },
+    { t: "Serviços", d: "Tipos de atuação, especialidades e diferenciais de atendimento." },
+    { t: "Processo", d: "Resumo das etapas: escuta, proposta, detalhamento, acompanhamento." },
+    { t: "Sobre mim", d: "Espaço dedicado à história e à forma de trabalhar de Giovanna." },
+    { t: "Depoimentos", d: "Área prevista para feedbacks reais de clientes (quando houver)." },
+    { t: "FAQ", d: "Reúne dúvidas frequentes para deixar a navegação mais clara." },
+    { t: "Contato", d: "Espaço previsto para WhatsApp, e-mail, Instagram e localização." },
   ];
   return (
     <section className="relative py-28" style={{ background: "var(--gradient-warm)" }}>
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-14 flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-xl">
-            <SectionLabel>Seções da home</SectionLabel>
+            <SectionLabel>Organização do conteúdo</SectionLabel>
             <h2 className="text-[clamp(2rem,4vw,3.25rem)] font-display leading-[1.05] tracking-tight">
-              Cada bloco com um papel claro.
+              Exemplo de seções para a home.
             </h2>
           </div>
           <p className="max-w-sm text-sm text-muted-foreground">
-            A home é uma narrativa. Não uma lista de coisas. Cada seção conduz o visitante para a
-            próxima decisão.
+            Cada bloco tem uma função clara dentro da narrativa. A ordem e a presença de cada um
+            podem ser ajustadas conforme a prioridade do escritório.
           </p>
         </div>
 
