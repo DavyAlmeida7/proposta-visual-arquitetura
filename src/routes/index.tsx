@@ -31,64 +31,83 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 
 function Hero() {
   return (
-    <section id="topo" className="relative overflow-hidden pt-32 pb-24 sm:pt-40 sm:pb-32">
+    <section id="topo" className="relative overflow-hidden pt-28 pb-20 sm:pt-40 sm:pb-32">
+      {/* Imagem de fundo no mobile (atrás do conteúdo) */}
+      <div aria-hidden className="pointer-events-none absolute inset-0 lg:hidden">
+        <img
+          src={heroImg}
+          alt=""
+          className="h-full w-full object-cover opacity-25"
+          width={1536}
+          height={1280}
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(180deg, var(--background) 0%, color-mix(in oklab, var(--background) 70%, transparent) 35%, color-mix(in oklab, var(--background) 80%, transparent) 70%, var(--background) 100%)",
+          }}
+        />
+      </div>
+
       <div
         aria-hidden
-        className="pointer-events-none absolute -left-32 top-20 h-96 w-96 rounded-full opacity-50 blur-3xl"
+        className="pointer-events-none absolute -left-32 top-20 h-96 w-96 rounded-full opacity-50 blur-3xl hidden lg:block"
         style={{ background: "radial-gradient(closest-side, var(--sage), transparent)" }}
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute -right-24 bottom-0 h-80 w-80 rounded-full opacity-40 blur-3xl"
+        className="pointer-events-none absolute -right-24 bottom-0 h-80 w-80 rounded-full opacity-40 blur-3xl hidden lg:block"
         style={{ background: "radial-gradient(closest-side, var(--sand), transparent)" }}
       />
 
-      <div className="mx-auto grid max-w-7xl items-center gap-14 px-6 lg:grid-cols-12">
+      <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-6 sm:gap-14 lg:grid-cols-12">
         <div className="lg:col-span-7">
           <SectionLabel>Apresentação conceitual · Giovanna Caires</SectionLabel>
-          <h1 className="text-[clamp(2.6rem,6vw,5rem)] font-display leading-[1.02] tracking-tight text-foreground">
+          <h1 className="text-[clamp(2.1rem,6vw,5rem)] font-display leading-[1.04] tracking-tight text-foreground">
             Proposta visual para o{" "}
             <em className="font-medium italic text-[color:var(--sage-deep)]">site-portfólio</em>{" "}
             de Giovanna Caires.
           </h1>
-          <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+          <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-muted-foreground sm:mt-6 sm:text-lg">
             Este documento reúne a estrutura, a linguagem e a direção estética pensadas para
             apresentar sua presença digital — um ponto de partida para discussão, não uma versão
             final.
           </p>
 
-          <div className="mt-9 flex flex-wrap items-center gap-3">
+          <div className="mt-8 flex flex-row flex-wrap items-center gap-2.5 sm:gap-3">
             <span
               aria-hidden
-              className="inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3.5 text-sm font-medium text-background"
+              className="inline-flex items-center gap-2 rounded-full bg-foreground px-4 py-2.5 text-[12px] font-medium text-background sm:px-6 sm:py-3.5 sm:text-sm"
             >
               Estrutura proposta
             </span>
             <span
               aria-hidden
-              className="inline-flex items-center gap-2 rounded-full border border-border bg-background/60 px-6 py-3.5 text-sm font-medium text-foreground backdrop-blur"
+              className="inline-flex items-center gap-2 rounded-full border border-border bg-background/60 px-4 py-2.5 text-[12px] font-medium text-foreground backdrop-blur sm:px-6 sm:py-3.5 sm:text-sm"
             >
               Direção visual sugerida
             </span>
           </div>
 
-          <dl className="mt-12 grid max-w-md grid-cols-3 gap-6 border-t border-border/60 pt-6">
+          <dl className="mt-10 grid max-w-md grid-cols-3 gap-4 border-t border-border/60 pt-6 sm:mt-12 sm:gap-6">
             <div>
               <dt className="text-[11px] uppercase tracking-widest text-muted-foreground">Foco</dt>
-              <dd className="mt-1 font-display text-xl">Autoridade</dd>
+              <dd className="mt-1 font-display text-lg sm:text-xl">Autoridade</dd>
             </div>
             <div>
               <dt className="text-[11px] uppercase tracking-widest text-muted-foreground">Conteúdo</dt>
-              <dd className="mt-1 font-display text-xl">Portfólio</dd>
+              <dd className="mt-1 font-display text-lg sm:text-xl">Portfólio</dd>
             </div>
             <div>
               <dt className="text-[11px] uppercase tracking-widest text-muted-foreground">Tom</dt>
-              <dd className="mt-1 font-display text-xl">Editorial</dd>
+              <dd className="mt-1 font-display text-lg sm:text-xl">Editorial</dd>
             </div>
           </dl>
         </div>
 
-        <div className="relative lg:col-span-5">
+        {/* Imagem em destaque visível apenas em lg+ (no mobile vira background) */}
+        <div className="relative hidden lg:col-span-5 lg:block">
           <div className="relative aspect-[4/5] overflow-hidden organic-mask-1 shadow-[var(--shadow-float)]">
             <img
               src={heroImg}
@@ -134,7 +153,7 @@ function PorQueAgora() {
     },
   ];
   return (
-    <section id="proposta" className="relative py-28">
+    <section id="proposta" className="relative py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-5">
@@ -175,9 +194,9 @@ function Estrutura() {
     { path: "/blog", label: "Blog (opcional)", desc: "Espaço para conteúdos autorais e reforço de autoridade." },
   ];
   return (
-    <section id="estrutura" className="relative py-28">
+    <section id="estrutura" className="relative py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="mb-14 max-w-2xl">
+        <div className="mb-10 max-w-2xl sm:mb-14">
           <SectionLabel>Estrutura sugerida do site</SectionLabel>
           <h2 className="text-[clamp(2rem,4vw,3.25rem)] font-display leading-[1.05] tracking-tight">
             Exemplo de como o site poderia ser organizado.
@@ -192,18 +211,18 @@ function Estrutura() {
           {routes.map((r, i) => (
             <div
               key={r.path}
-              className={`grid grid-cols-12 items-center gap-4 px-6 py-6 sm:px-10 ${
+              className={`grid grid-cols-12 items-center gap-x-4 gap-y-1.5 px-5 py-5 sm:px-10 sm:py-6 ${
                 i !== routes.length - 1 ? "border-b border-border/70" : ""
               } transition-colors hover:bg-[color:var(--bone)]`}
             >
               <div className="col-span-12 sm:col-span-1 text-xs tracking-widest text-muted-foreground">
                 0{i + 1}
               </div>
-              <code className="col-span-12 sm:col-span-4 font-mono text-sm text-[color:var(--sage-deep)]">
+              <code className="col-span-12 sm:col-span-4 font-mono text-[13px] text-[color:var(--sage-deep)] sm:text-sm">
                 {r.path}
               </code>
-              <div className="col-span-12 sm:col-span-3 font-display text-xl">{r.label}</div>
-              <div className="col-span-12 sm:col-span-4 text-sm text-muted-foreground">{r.desc}</div>
+              <div className="col-span-12 sm:col-span-3 font-display text-lg sm:text-xl">{r.label}</div>
+              <div className="col-span-12 sm:col-span-4 text-[13px] text-muted-foreground sm:text-sm">{r.desc}</div>
             </div>
           ))}
         </div>
@@ -224,9 +243,9 @@ function SecoesHome() {
     { t: "Contato", d: "Espaço previsto para WhatsApp, e-mail, Instagram e localização.", Icon: Mail },
   ];
   return (
-    <section className="relative py-28" style={{ background: "var(--gradient-warm)" }}>
+    <section className="relative py-20 sm:py-28" style={{ background: "var(--gradient-warm)" }}>
       <div className="mx-auto max-w-7xl px-6">
-        <div className="mb-14 flex flex-wrap items-end justify-between gap-6">
+        <div className="mb-10 flex flex-wrap items-end justify-between gap-6 sm:mb-14">
           <div className="max-w-xl">
             <SectionLabel>Organização do conteúdo</SectionLabel>
             <h2 className="text-[clamp(2rem,4vw,3.25rem)] font-display leading-[1.05] tracking-tight">
@@ -245,7 +264,7 @@ function SecoesHome() {
             return (
               <div
                 key={b.t}
-                className="group relative overflow-hidden rounded-2xl border border-border/60 bg-background p-6 transition-all hover:-translate-y-1 hover:border-[color:var(--sage)] hover:shadow-[var(--shadow-float)]"
+                className="group relative overflow-hidden rounded-2xl border border-border/60 bg-background p-5 transition-all hover:-translate-y-1 hover:border-[color:var(--sage)] hover:shadow-[var(--shadow-float)] sm:p-6"
               >
                 {/* gradiente decorativo sempre visível */}
                 <div
@@ -261,8 +280,8 @@ function SecoesHome() {
                     {String(i + 1).padStart(2, "0")}
                   </span>
                 </div>
-                <div className="relative mt-4 font-display text-2xl">{b.t}</div>
-                <p className="relative mt-2 text-sm text-muted-foreground">{b.d}</p>
+                <div className="relative mt-4 font-display text-xl sm:text-2xl">{b.t}</div>
+                <p className="relative mt-2 text-[13px] text-muted-foreground sm:text-sm">{b.d}</p>
               </div>
             );
           })}
@@ -279,9 +298,9 @@ function ProjetosDestaque() {
     { img: project3, cidade: "Cidade ilustrativa", tipo: "Suíte residencial", ano: "Ano", area: "28 m²" },
   ];
   return (
-    <section id="projetos" className="relative py-28">
+    <section id="projetos" className="relative py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="mb-14 flex flex-wrap items-end justify-between gap-6">
+        <div className="mb-10 flex flex-wrap items-end justify-between gap-6 sm:mb-14">
           <div>
             <SectionLabel>Projetos em destaque</SectionLabel>
             <h2 className="text-[clamp(2rem,4vw,3.25rem)] font-display leading-[1.05] tracking-tight">
@@ -300,7 +319,7 @@ function ProjetosDestaque() {
           </span>
         </div>
 
-        <div className="grid gap-7 md:grid-cols-3">
+        <div className="grid gap-5 sm:gap-7 md:grid-cols-3">
           {projetos.map((p, i) => (
             <article
               key={i}
@@ -385,9 +404,9 @@ function PaginaProjeto() {
     { t: "Antes e depois (opcional)", d: "Comparativo visual quando fizer sentido apresentar a transformação." },
   ];
   return (
-    <section id="projeto" className="relative py-28" style={{ background: "var(--gradient-warm)" }}>
+    <section id="projeto" className="relative py-20 sm:py-28" style={{ background: "var(--gradient-warm)" }}>
       <div className="mx-auto max-w-7xl px-6">
-        <div className="mb-14 max-w-2xl">
+        <div className="mb-10 max-w-2xl sm:mb-14">
           <SectionLabel>Página individual de projeto</SectionLabel>
           <h2 className="text-[clamp(2rem,4vw,3.25rem)] font-display leading-[1.05] tracking-tight">
             Como cada projeto pode ser apresentado.
@@ -399,7 +418,7 @@ function PaginaProjeto() {
         </div>
 
         <div className="overflow-hidden rounded-[2rem] border border-border bg-background shadow-[var(--shadow-float)]">
-          <div className="relative aspect-[16/8]">
+          <div className="relative aspect-[4/3] sm:aspect-[16/8]">
             <img
               src={project1}
               alt="Mock-up de página individual de projeto"
@@ -407,17 +426,17 @@ function PaginaProjeto() {
               className="h-full w-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-foreground/40 via-transparent to-transparent" />
-            <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between text-background sm:bottom-10 sm:left-10 sm:right-10">
+            <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between text-background sm:bottom-10 sm:left-10 sm:right-10">
               <div>
                 <div className="text-[11px] tracking-widest opacity-80">EXEMPLO DE PROJETO</div>
-                <h3 className="mt-2 font-display text-3xl sm:text-5xl">Nome do projeto</h3>
+                <h3 className="mt-2 font-display text-2xl sm:text-5xl">Nome do projeto</h3>
               </div>
               <div className="hidden text-right text-xs opacity-80 sm:block">galeria de fotos</div>
             </div>
           </div>
 
-          <div className="grid gap-10 p-8 sm:p-12 lg:grid-cols-12">
-            <dl className="space-y-5 lg:col-span-3">
+          <div className="grid gap-8 p-6 sm:gap-10 sm:p-12 lg:grid-cols-12">
+            <dl className="grid grid-cols-2 gap-x-4 gap-y-5 sm:grid-cols-4 lg:col-span-3 lg:grid-cols-1 lg:space-y-0">
               {campos.map((c) => (
                 <div key={c.l}>
                   <dt className="text-[11px] uppercase tracking-widest text-muted-foreground">
@@ -459,8 +478,8 @@ function AdminSimples() {
     { t: "Acesso protegido por login pessoal", d: "Apenas Giovanna entra na área de gestão." },
   ];
   return (
-    <section id="admin" className="relative py-28">
-      <div className="mx-auto grid max-w-7xl gap-14 px-6 lg:grid-cols-12 lg:items-center">
+    <section id="admin" className="relative py-20 sm:py-28">
+      <div className="mx-auto grid max-w-7xl gap-10 px-6 sm:gap-14 lg:grid-cols-12 lg:items-center">
         <div className="lg:col-span-5">
           <SectionLabel>Área administrativa simples</SectionLabel>
           <h2 className="text-[clamp(2rem,4vw,3.25rem)] font-display leading-[1.05] tracking-tight">
@@ -481,7 +500,7 @@ function AdminSimples() {
 
         <div className="lg:col-span-7">
           <div className="rounded-[2rem] border border-border bg-foreground p-2 shadow-[var(--shadow-float)]">
-            <div className="rounded-[1.6rem] bg-background p-6 sm:p-8">
+            <div className="rounded-[1.6rem] bg-background p-5 sm:p-8">
               <div className="mb-6 flex items-center justify-between border-b border-border pb-4">
                 <div className="flex items-center gap-2">
                   <span className="h-2.5 w-2.5 rounded-full bg-[color:var(--clay)]/70" />
@@ -496,7 +515,7 @@ function AdminSimples() {
                 {acoes.map((a, i) => (
                   <li
                     key={a.t}
-                    className="flex items-start justify-between gap-4 rounded-xl border border-border/70 bg-[color:var(--bone)] px-4 py-3 text-sm"
+                    className="flex items-start justify-between gap-3 rounded-xl border border-border/70 bg-[color:var(--bone)] px-3.5 py-3 text-sm sm:gap-4 sm:px-4"
                   >
                     <span className="flex items-start gap-3">
                       <span className="mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-full bg-[color:var(--sage)]/20 text-[color:var(--sage-deep)] text-xs">
@@ -507,7 +526,7 @@ function AdminSimples() {
                         <span className="block text-xs text-muted-foreground">{a.d}</span>
                       </span>
                     </span>
-                    <span className="shrink-0 text-[10px] uppercase tracking-widest text-muted-foreground">
+                    <span className="hidden shrink-0 text-[10px] uppercase tracking-widest text-muted-foreground sm:inline">
                       item {String(i + 1).padStart(2, "0")}
                     </span>
                   </li>
@@ -546,9 +565,9 @@ function Opcionais() {
     },
   ];
   return (
-    <section className="relative py-28" style={{ background: "var(--gradient-warm)" }}>
+    <section className="relative py-20 sm:py-28" style={{ background: "var(--gradient-warm)" }}>
       <div className="mx-auto max-w-7xl px-6">
-        <div className="mb-14 grid gap-8 lg:grid-cols-12 lg:items-end">
+        <div className="mb-10 grid gap-8 sm:mb-14 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-7">
             <SectionLabel>Possibilidades opcionais</SectionLabel>
             <h2 className="text-[clamp(2rem,4vw,3.25rem)] font-display leading-[1.05] tracking-tight">
@@ -570,11 +589,11 @@ function Opcionais() {
           </div>
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-5">
           {mods.map((m, i) => (
             <div
               key={m.t}
-              className="flex flex-col rounded-3xl border border-border bg-background p-6 transition-all hover:border-[color:var(--sage)] hover:shadow-[var(--shadow-soft)]"
+              className="flex flex-col rounded-3xl border border-border bg-background p-5 transition-all hover:border-[color:var(--sage)] hover:shadow-[var(--shadow-soft)] sm:p-6"
             >
               <div className="mb-4 flex items-center justify-between">
                 <div className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[color:var(--sage)]/20 text-[color:var(--sage-deep)] text-xs">
@@ -623,9 +642,9 @@ function DirecaoVisual() {
     },
   ];
   return (
-    <section id="visual" className="relative py-28">
+    <section id="visual" className="relative py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="mb-14 max-w-2xl">
+        <div className="mb-10 max-w-2xl sm:mb-14">
           <SectionLabel>Direção visual sugerida</SectionLabel>
           <h2 className="text-[clamp(2rem,4vw,3.25rem)] font-display leading-[1.05] tracking-tight">
             Três direções cromáticas para discussão.
@@ -636,7 +655,7 @@ function DirecaoVisual() {
           </p>
         </div>
 
-        <div className="grid gap-8 lg:grid-cols-3">
+        <div className="grid gap-6 sm:gap-8 lg:grid-cols-3">
           {paletas.map((p) => (
             <div
               key={p.nome}
@@ -683,9 +702,9 @@ function Tipografia() {
     { n: "04", display: '"Bodoni Moda", serif', body: '"Inter", sans-serif', dn: "Bodoni Moda", bn: "Inter" },
   ];
   return (
-    <section className="relative py-28" style={{ background: "var(--gradient-warm)" }}>
+    <section className="relative py-20 sm:py-28" style={{ background: "var(--gradient-warm)" }}>
       <div className="mx-auto max-w-7xl px-6">
-        <div className="mb-14 max-w-2xl">
+        <div className="mb-10 max-w-2xl sm:mb-14">
           <SectionLabel>Direções tipográficas</SectionLabel>
           <h2 className="text-[clamp(2rem,4vw,3.25rem)] font-display leading-[1.05] tracking-tight">
             Quatro combinações sugeridas.
@@ -696,20 +715,20 @@ function Tipografia() {
           </p>
         </div>
 
-        <div className="grid gap-5 md:grid-cols-2">
+        <div className="grid gap-4 sm:gap-5 md:grid-cols-2">
           {opcoes.map((o) => (
             <div
               key={o.n}
-              className="rounded-3xl border border-border bg-background p-8 transition-colors hover:border-[color:var(--sage)]"
+              className="rounded-3xl border border-border bg-background p-6 transition-colors hover:border-[color:var(--sage)] sm:p-8"
             >
-              <div className="mb-6 flex items-center justify-between text-xs text-muted-foreground">
+              <div className="mb-5 flex flex-wrap items-center justify-between gap-x-3 gap-y-1 text-[11px] text-muted-foreground sm:mb-6 sm:text-xs">
                 <span className="tracking-widest">OPÇÃO {o.n}</span>
-                <span>
+                <span className="text-right">
                   {o.dn} <span className="text-[color:var(--sage-deep)]">+</span> {o.bn}
                 </span>
               </div>
               <div
-                className="text-5xl leading-none tracking-tight"
+                className="text-[2.25rem] leading-none tracking-tight sm:text-5xl"
                 style={{ fontFamily: o.display, fontWeight: 500 }}
               >
                 Espaços que <em>respiram</em>.
@@ -751,10 +770,10 @@ function PresencaLocal() {
     { t: "Instagram", d: "Segue como vitrine do dia a dia, conectado ao portfólio no site." },
   ];
   return (
-    <section className="relative py-28">
+    <section className="relative py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
-          <div className="lg:col-span-5">
+        <div className="grid gap-10 sm:gap-12 lg:grid-cols-12 lg:items-center">
+          <div className="order-2 lg:order-1 lg:col-span-5">
             <div className="relative aspect-square overflow-hidden organic-mask-2 shadow-[var(--shadow-float)]">
               <img
                 src={aboutDetail}
@@ -764,7 +783,7 @@ function PresencaLocal() {
               />
             </div>
           </div>
-          <div className="lg:col-span-7">
+          <div className="order-1 lg:order-2 lg:col-span-7">
             <SectionLabel>Presença local</SectionLabel>
             <h2 className="text-[clamp(2rem,4vw,3.25rem)] font-display leading-[1.05] tracking-tight">
               O site dialoga com os canais existentes.
@@ -801,10 +820,10 @@ function PresencaLocal() {
 
 function CTAFinal() {
   return (
-    <section id="contato" className="relative px-6 py-28">
+    <section id="contato" className="relative px-6 py-20 sm:py-28">
       <div className="mx-auto max-w-5xl">
         <div
-          className="relative overflow-hidden rounded-[2.5rem] px-8 py-20 text-center sm:px-16 sm:py-28"
+          className="relative overflow-hidden rounded-[2rem] px-6 py-16 text-center sm:rounded-[2.5rem] sm:px-16 sm:py-28"
           style={{ background: "oklch(0.18 0.012 260)" }}
         >
           <div
@@ -832,16 +851,16 @@ function CTAFinal() {
               Giovanna Caires.
             </p>
 
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+            <div className="mt-10 flex flex-row flex-wrap items-center justify-center gap-2.5 sm:gap-3">
               <span
                 aria-hidden
-                className="inline-flex items-center gap-2 rounded-full bg-background px-7 py-4 text-sm font-medium text-foreground"
+                className="inline-flex items-center gap-2 rounded-full bg-background px-5 py-3 text-[12px] font-medium text-foreground sm:px-7 sm:py-4 sm:text-sm"
               >
                 Espaço previsto para contato
               </span>
               <span
                 aria-hidden
-                className="inline-flex items-center gap-2 rounded-full border border-background/30 px-7 py-4 text-sm text-background"
+                className="inline-flex items-center gap-2 rounded-full border border-background/30 px-5 py-3 text-[12px] text-background sm:px-7 sm:py-4 sm:text-sm"
               >
                 WhatsApp · Instagram · e-mail
               </span>

@@ -20,17 +20,17 @@ export function FloatingNav() {
   }, []);
 
   return (
-    <header className="fixed inset-x-0 top-5 z-50 flex justify-center px-4">
+    <header className="fixed inset-x-0 top-3 z-50 flex justify-center px-3 sm:top-5 sm:px-4">
       <nav
-        className={`flex w-full max-w-6xl items-center justify-between gap-4 rounded-full border border-border/60 bg-background/80 px-5 py-3 backdrop-blur-xl transition-all duration-500 sm:px-7 sm:py-3.5 ${
+        className={`flex w-full max-w-6xl items-center justify-between gap-3 rounded-full border border-border/60 bg-background/80 px-4 py-2.5 backdrop-blur-xl transition-all duration-500 sm:gap-4 sm:px-7 sm:py-3.5 ${
           scrolled ? "shadow-[var(--shadow-float)]" : "shadow-[var(--shadow-soft)]"
         }`}
       >
-        <a href="#topo" className="flex items-center gap-3 pl-1">
+        <a href="#topo" className="flex items-center gap-2.5 pl-0 sm:gap-3 sm:pl-1">
           <img
             src={logoGiovanna}
             alt="Giovanna Caires — Arquitetura e Interiores"
-            className="h-10 w-auto object-contain sm:h-11"
+            className="h-9 w-auto object-contain sm:h-11"
           />
           <span className="hidden flex-col leading-tight sm:flex">
             <span className="font-display text-[15px] tracking-tight text-foreground">Giovanna Caires</span>
@@ -53,9 +53,10 @@ export function FloatingNav() {
 
         <span
           aria-hidden
-          className="inline-flex items-center gap-2 rounded-full border border-border/70 bg-[color:var(--bone)] px-4 py-2.5 text-[11px] uppercase tracking-[0.18em] text-muted-foreground"
+          className="inline-flex items-center gap-2 rounded-full border border-border/70 bg-[color:var(--bone)] px-3 py-2 text-[10px] uppercase tracking-[0.16em] text-muted-foreground sm:px-4 sm:py-2.5 sm:text-[11px] sm:tracking-[0.18em]"
         >
-          Apresentação de proposta
+          <span className="sm:hidden">Proposta</span>
+          <span className="hidden sm:inline">Apresentação de proposta</span>
         </span>
       </nav>
     </header>
