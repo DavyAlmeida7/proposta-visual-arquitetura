@@ -243,9 +243,9 @@ function SecoesHome() {
     { t: "Contato", d: "Espaço previsto para WhatsApp, e-mail, Instagram e localização.", Icon: Mail },
   ];
   return (
-    <section className="relative py-28" style={{ background: "var(--gradient-warm)" }}>
+    <section className="relative py-20 sm:py-28" style={{ background: "var(--gradient-warm)" }}>
       <div className="mx-auto max-w-7xl px-6">
-        <div className="mb-14 flex flex-wrap items-end justify-between gap-6">
+        <div className="mb-10 flex flex-wrap items-end justify-between gap-6 sm:mb-14">
           <div className="max-w-xl">
             <SectionLabel>Organização do conteúdo</SectionLabel>
             <h2 className="text-[clamp(2rem,4vw,3.25rem)] font-display leading-[1.05] tracking-tight">
@@ -264,7 +264,7 @@ function SecoesHome() {
             return (
               <div
                 key={b.t}
-                className="group relative overflow-hidden rounded-2xl border border-border/60 bg-background p-6 transition-all hover:-translate-y-1 hover:border-[color:var(--sage)] hover:shadow-[var(--shadow-float)]"
+                className="group relative overflow-hidden rounded-2xl border border-border/60 bg-background p-5 transition-all hover:-translate-y-1 hover:border-[color:var(--sage)] hover:shadow-[var(--shadow-float)] sm:p-6"
               >
                 {/* gradiente decorativo sempre visível */}
                 <div
@@ -280,8 +280,8 @@ function SecoesHome() {
                     {String(i + 1).padStart(2, "0")}
                   </span>
                 </div>
-                <div className="relative mt-4 font-display text-2xl">{b.t}</div>
-                <p className="relative mt-2 text-sm text-muted-foreground">{b.d}</p>
+                <div className="relative mt-4 font-display text-xl sm:text-2xl">{b.t}</div>
+                <p className="relative mt-2 text-[13px] text-muted-foreground sm:text-sm">{b.d}</p>
               </div>
             );
           })}
