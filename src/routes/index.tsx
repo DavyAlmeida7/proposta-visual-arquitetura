@@ -770,10 +770,10 @@ function PresencaLocal() {
     { t: "Instagram", d: "Segue como vitrine do dia a dia, conectado ao portfólio no site." },
   ];
   return (
-    <section className="relative py-28">
+    <section className="relative py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
-          <div className="lg:col-span-5">
+        <div className="grid gap-10 sm:gap-12 lg:grid-cols-12 lg:items-center">
+          <div className="order-2 lg:order-1 lg:col-span-5">
             <div className="relative aspect-square overflow-hidden organic-mask-2 shadow-[var(--shadow-float)]">
               <img
                 src={aboutDetail}
@@ -783,7 +783,7 @@ function PresencaLocal() {
               />
             </div>
           </div>
-          <div className="lg:col-span-7">
+          <div className="order-1 lg:order-2 lg:col-span-7">
             <SectionLabel>Presença local</SectionLabel>
             <h2 className="text-[clamp(2rem,4vw,3.25rem)] font-display leading-[1.05] tracking-tight">
               O site dialoga com os canais existentes.
@@ -820,10 +820,10 @@ function PresencaLocal() {
 
 function CTAFinal() {
   return (
-    <section id="contato" className="relative px-6 py-28">
+    <section id="contato" className="relative px-6 py-20 sm:py-28">
       <div className="mx-auto max-w-5xl">
         <div
-          className="relative overflow-hidden rounded-[2.5rem] px-8 py-20 text-center sm:px-16 sm:py-28"
+          className="relative overflow-hidden rounded-[2rem] px-6 py-16 text-center sm:rounded-[2.5rem] sm:px-16 sm:py-28"
           style={{ background: "oklch(0.18 0.012 260)" }}
         >
           <div
@@ -851,16 +851,16 @@ function CTAFinal() {
               Giovanna Caires.
             </p>
 
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+            <div className="mt-10 flex flex-row flex-wrap items-center justify-center gap-2.5 sm:gap-3">
               <span
                 aria-hidden
-                className="inline-flex items-center gap-2 rounded-full bg-background px-7 py-4 text-sm font-medium text-foreground"
+                className="inline-flex items-center gap-2 rounded-full bg-background px-5 py-3 text-[12px] font-medium text-foreground sm:px-7 sm:py-4 sm:text-sm"
               >
                 Espaço previsto para contato
               </span>
               <span
                 aria-hidden
-                className="inline-flex items-center gap-2 rounded-full border border-background/30 px-7 py-4 text-sm text-background"
+                className="inline-flex items-center gap-2 rounded-full border border-background/30 px-5 py-3 text-[12px] text-background sm:px-7 sm:py-4 sm:text-sm"
               >
                 WhatsApp · Instagram · e-mail
               </span>
