@@ -29,11 +29,19 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Proposta — Site-Portfólio para Arquiteta" },
+      {
+        name: "description",
+        content:
+          "Apresentação visual e estratégica de uma proposta de site-portfólio: autoridade, identidade própria e gestão simples dos projetos.",
+      },
+      { name: "author", content: "Estúdio de Proposta" },
+      { property: "og:title", content: "Proposta — Site-Portfólio para Arquiteta" },
+      {
+        property: "og:description",
+        content:
+          "Apresentação premium de uma proposta de site-portfólio para arquitetas: estrutura, direção visual e área administrativa simples.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
