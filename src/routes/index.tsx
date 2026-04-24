@@ -714,10 +714,28 @@ function Tipografia() {
               >
                 Espaços que <em>respiram</em>.
               </div>
-              <p className="mt-5 text-sm leading-relaxed text-muted-foreground" style={{ fontFamily: o.body }}>
-                Cada projeto começa por uma escuta atenta. Entender a rotina, a luz, o tempo de cada
-                ambiente. A arquitetura nasce desse cuidado silencioso com o cotidiano.
+              <div
+                className="mt-3 text-xl leading-snug text-foreground/80"
+                style={{ fontFamily: o.display, fontWeight: 400, fontStyle: "italic" }}
+              >
+                Subtítulo em fonte de exibição
+              </div>
+              <p
+                className="mt-5 text-sm leading-relaxed text-muted-foreground"
+                style={{ fontFamily: o.body }}
+              >
+                Texto corrido em <strong style={{ fontFamily: o.body }}>{o.bn}</strong> — o tipo
+                usado para parágrafos, descrições de projeto e conteúdo geral. Combina com{" "}
+                <em style={{ fontFamily: o.display }}>{o.dn}</em> nos títulos.
               </p>
+              <div
+                className="mt-5 flex items-center gap-3 border-t border-border/70 pt-4 text-[11px] uppercase tracking-[0.2em] text-muted-foreground"
+                style={{ fontFamily: o.body }}
+              >
+                <span>Aa Bb Cc 0123</span>
+                <span className="text-border">·</span>
+                <span>Amostra ilustrativa</span>
+              </div>
             </div>
           ))}
         </div>
