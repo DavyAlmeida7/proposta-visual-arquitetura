@@ -35,30 +35,31 @@ function Hero() {
 
       <div className="mx-auto grid max-w-7xl items-center gap-14 px-6 lg:grid-cols-12">
         <div className="lg:col-span-7">
-          <SectionLabel>Apresentação de proposta</SectionLabel>
+          <SectionLabel>Apresentação conceitual · Giovanna Caires</SectionLabel>
           <h1 className="text-[clamp(2.6rem,6vw,5rem)] font-display leading-[1.02] tracking-tight text-foreground">
-            Um <em className="font-medium italic text-[color:var(--sage-deep)]">site-portfólio</em>{" "}
-            à altura do seu trabalho.
+            Proposta visual para o{" "}
+            <em className="font-medium italic text-[color:var(--sage-deep)]">site-portfólio</em>{" "}
+            de Giovanna Caires.
           </h1>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Uma vitrine digital com identidade própria, navegação editorial e uma área administrativa
-            simples para você atualizar os projetos quando quiser — sem depender de ninguém.
+            Este documento reúne a estrutura, a linguagem e a direção estética pensadas para
+            apresentar sua presença digital — um ponto de partida para discussão, não uma versão
+            final.
           </p>
 
           <div className="mt-9 flex flex-wrap items-center gap-3">
-            <a
-              href="#estrutura"
-              className="group inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3.5 text-sm font-medium text-background transition-all hover:bg-foreground/90"
+            <span
+              aria-hidden
+              className="inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3.5 text-sm font-medium text-background"
             >
-              Explorar proposta
-              <span className="transition-transform group-hover:translate-x-1">→</span>
-            </a>
-            <a
-              href="#contato"
-              className="inline-flex items-center gap-2 rounded-full border border-border bg-background/60 px-6 py-3.5 text-sm font-medium text-foreground backdrop-blur transition-colors hover:bg-background"
+              Estrutura proposta
+            </span>
+            <span
+              aria-hidden
+              className="inline-flex items-center gap-2 rounded-full border border-border bg-background/60 px-6 py-3.5 text-sm font-medium text-foreground backdrop-blur"
             >
-              Falar comigo
-            </a>
+              Direção visual sugerida
+            </span>
           </div>
 
           <dl className="mt-12 grid max-w-md grid-cols-3 gap-6 border-t border-border/60 pt-6">
@@ -67,11 +68,11 @@ function Hero() {
               <dd className="mt-1 font-display text-xl">Autoridade</dd>
             </div>
             <div>
-              <dt className="text-[11px] uppercase tracking-widest text-muted-foreground">Gestão</dt>
-              <dd className="mt-1 font-display text-xl">Simples</dd>
+              <dt className="text-[11px] uppercase tracking-widest text-muted-foreground">Conteúdo</dt>
+              <dd className="mt-1 font-display text-xl">Portfólio</dd>
             </div>
             <div>
-              <dt className="text-[11px] uppercase tracking-widest text-muted-foreground">Visual</dt>
+              <dt className="text-[11px] uppercase tracking-widest text-muted-foreground">Tom</dt>
               <dd className="mt-1 font-display text-xl">Editorial</dd>
             </div>
           </dl>
@@ -90,8 +91,8 @@ function Hero() {
           <div className="absolute -bottom-6 -left-6 hidden h-32 w-32 rounded-full sm:block"
                style={{ background: "var(--gradient-sage)", boxShadow: "var(--shadow-soft)" }} />
           <div className="absolute -right-4 top-10 hidden rounded-2xl border border-border bg-background/90 px-4 py-3 text-xs backdrop-blur sm:block">
-            <div className="font-display text-sm">Casa Jardim Botânico</div>
-            <div className="text-muted-foreground">Reforma residencial · 2024</div>
+            <div className="font-display text-sm">Exemplo de projeto</div>
+            <div className="text-muted-foreground">Imagem ilustrativa · referência visual</div>
           </div>
         </div>
       </div>
@@ -104,22 +105,22 @@ function PorQueAgora() {
     {
       n: "01",
       t: "Identidade própria",
-      d: "O Instagram entrega seu trabalho dentro do visual de outra empresa. Um site é o seu espaço.",
+      d: "Um espaço com a sua linguagem visual, fora do layout padrão de redes sociais.",
     },
     {
       n: "02",
-      t: "Navegação que respeita o projeto",
-      d: "Cada projeto pode ter contexto, fotos, planta e processo — não só uma sequência de quadradinhos.",
+      t: "Navegação clara",
+      d: "Cada projeto pode ter contexto, fotos e detalhes — apresentado em um fluxo organizado.",
     },
     {
       n: "03",
-      t: "Apresentação mais profissional",
-      d: "Quando alguém te indica, recebe um link sério. Não um perfil concorrendo com memes.",
+      t: "Apresentação profissional",
+      d: "Um endereço próprio para compartilhar em indicações, propostas e contatos comerciais.",
     },
     {
       n: "04",
-      t: "Organização real dos projetos",
-      d: "Por categoria, ano ou destaque. Você decide o que aparece primeiro.",
+      t: "Portfólio organizado",
+      d: "Projetos agrupados por categoria, ano ou destaque, com a ordem definida pela arquiteta.",
     },
   ];
   return (
@@ -127,14 +128,14 @@ function PorQueAgora() {
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <SectionLabel>Por que agora</SectionLabel>
+            <SectionLabel>Bloco de proposta</SectionLabel>
             <h2 className="text-[clamp(2rem,4vw,3.25rem)] font-display leading-[1.05] tracking-tight">
-              O Instagram é importante.<br />
-              Mas <em className="italic text-[color:var(--sage-deep)]">não é</em> seu portfólio.
+              Um site-portfólio com{" "}
+              <em className="italic text-[color:var(--sage-deep)]">identidade própria</em>.
             </h2>
             <p className="mt-6 max-w-md text-muted-foreground">
-              Ele continua sendo a porta de entrada. O site é o lugar onde a conversa amadurece —
-              quando o cliente decide se vai te procurar de verdade.
+              A proposta reúne quatro pilares: identidade visual autoral, apresentação estratégica
+              dos projetos, gestão simples de atualização e foco em imagem profissional.
             </p>
           </div>
           <ul className="grid gap-5 sm:grid-cols-2 lg:col-span-7">
@@ -157,20 +158,24 @@ function PorQueAgora() {
 
 function Estrutura() {
   const routes = [
-    { path: "/", label: "Home", desc: "Apresentação geral, projetos em destaque, sobre, contato." },
-    { path: "/projetos", label: "Lista de projetos", desc: "Galeria filtrável por tipo, ano ou categoria." },
-    { path: "/projeto/[slug]", label: "Página individual", desc: "Cada projeto com sua história e fotos." },
-    { path: "/admin", label: "Área administrativa", desc: "Acesso protegido para você gerenciar tudo." },
-    { path: "/blog", label: "Blog", desc: "Opcional. Para reforço de autoridade e descoberta orgânica." },
+    { path: "/", label: "Home proposta", desc: "Abertura, projetos em destaque, sobre e contato." },
+    { path: "/projetos", label: "Página de projetos", desc: "Reúne o portfólio com filtros por tipo, ano ou categoria." },
+    { path: "/projeto/[slug]", label: "Página individual", desc: "Cada projeto em uma página própria, com galeria e detalhes." },
+    { path: "/admin", label: "Gestão simples", desc: "Acesso protegido para atualizar projetos e ordem de exibição." },
+    { path: "/blog", label: "Blog (opcional)", desc: "Espaço para conteúdos autorais e reforço de autoridade." },
   ];
   return (
     <section id="estrutura" className="relative py-28">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-14 max-w-2xl">
-          <SectionLabel>Estrutura principal</SectionLabel>
+          <SectionLabel>Estrutura sugerida do site</SectionLabel>
           <h2 className="text-[clamp(2rem,4vw,3.25rem)] font-display leading-[1.05] tracking-tight">
-            Cinco rotas. Uma experiência inteira.
+            Exemplo de como o site poderia ser organizado.
           </h2>
+          <p className="mt-4 text-muted-foreground">
+            Cinco rotas que cobrem apresentação, portfólio, detalhe de cada projeto e gestão
+            interna. Estrutura aberta a ajustes durante o desenvolvimento.
+          </p>
         </div>
 
         <div className="overflow-hidden rounded-3xl border border-border bg-card shadow-[var(--shadow-soft)]">
@@ -199,28 +204,28 @@ function Estrutura() {
 
 function SecoesHome() {
   const blocks = [
-    { t: "Hero", d: "Primeira impressão. Imagem forte e proposta clara." },
-    { t: "Projetos", d: "Curadoria dos trabalhos em destaque." },
-    { t: "Serviços", d: "O que você entrega e como." },
-    { t: "Processo", d: "Como é trabalhar com você, passo a passo." },
-    { t: "Sobre mim", d: "Sua história, sua visão, seu olhar." },
-    { t: "Depoimentos", d: "Vozes reais de quem já contratou (quando houver)." },
-    { t: "FAQ", d: "Antecipa as dúvidas mais comuns antes do contato." },
-    { t: "Contato", d: "CTA final, formulário e canais diretos." },
+    { t: "Hero", d: "Abertura visual com imagem e apresentação resumida." },
+    { t: "Projetos", d: "Seleção de três projetos principais em destaque." },
+    { t: "Serviços", d: "Tipos de atuação, especialidades e diferenciais de atendimento." },
+    { t: "Processo", d: "Resumo das etapas: escuta, proposta, detalhamento, acompanhamento." },
+    { t: "Sobre mim", d: "Espaço dedicado à história e à forma de trabalhar de Giovanna." },
+    { t: "Depoimentos", d: "Área prevista para feedbacks reais de clientes (quando houver)." },
+    { t: "FAQ", d: "Reúne dúvidas frequentes para deixar a navegação mais clara." },
+    { t: "Contato", d: "Espaço previsto para WhatsApp, e-mail, Instagram e localização." },
   ];
   return (
     <section className="relative py-28" style={{ background: "var(--gradient-warm)" }}>
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-14 flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-xl">
-            <SectionLabel>Seções da home</SectionLabel>
+            <SectionLabel>Organização do conteúdo</SectionLabel>
             <h2 className="text-[clamp(2rem,4vw,3.25rem)] font-display leading-[1.05] tracking-tight">
-              Cada bloco com um papel claro.
+              Exemplo de seções para a home.
             </h2>
           </div>
           <p className="max-w-sm text-sm text-muted-foreground">
-            A home é uma narrativa. Não uma lista de coisas. Cada seção conduz o visitante para a
-            próxima decisão.
+            Cada bloco tem uma função clara dentro da narrativa. A ordem e a presença de cada um
+            podem ser ajustadas conforme a prioridade do escritório.
           </p>
         </div>
 
@@ -250,9 +255,9 @@ function SecoesHome() {
 
 function ProjetosDestaque() {
   const projetos = [
-    { img: project1, nome: "Apartamento Curva Suave", cidade: "São Paulo", tipo: "Residencial", ano: "2024" },
-    { img: project2, nome: "Cozinha Travertino", cidade: "Campinas", tipo: "Reforma", ano: "2024" },
-    { img: project3, nome: "Suíte Linho & Madeira", cidade: "Florianópolis", tipo: "Residencial", ano: "2023" },
+    { img: project1, nome: "Projeto exemplo 01", cidade: "Cidade ilustrativa", tipo: "Residencial", ano: "Ano" },
+    { img: project2, nome: "Projeto exemplo 02", cidade: "Cidade ilustrativa", tipo: "Reforma", ano: "Ano" },
+    { img: project3, nome: "Projeto exemplo 03", cidade: "Cidade ilustrativa", tipo: "Residencial", ano: "Ano" },
   ];
   return (
     <section id="projetos" className="relative py-28">
@@ -261,15 +266,19 @@ function ProjetosDestaque() {
           <div>
             <SectionLabel>Projetos em destaque</SectionLabel>
             <h2 className="text-[clamp(2rem,4vw,3.25rem)] font-display leading-[1.05] tracking-tight">
-              Cada projeto, sua própria página.
+              Três projetos em destaque na home.
             </h2>
+            <p className="mt-4 max-w-xl text-muted-foreground">
+              A home pode trazer uma curadoria de três projetos principais. A página de projetos
+              reúne todo o portfólio com filtros, e cada projeto pode abrir uma página própria.
+            </p>
           </div>
-          <a
-            href="#projeto"
-            className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm transition-colors hover:bg-foreground hover:text-background"
+          <span
+            aria-hidden
+            className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-xs uppercase tracking-[0.18em] text-muted-foreground"
           >
-            Ver todos os projetos →
-          </a>
+            Exemplo de navegação
+          </span>
         </div>
 
         <div className="grid gap-8 md:grid-cols-3">
@@ -296,6 +305,9 @@ function ProjetosDestaque() {
               <div className="mt-1 text-sm text-muted-foreground">
                 {p.cidade} · {p.tipo}
               </div>
+              <div className="mt-1 text-[11px] uppercase tracking-widest text-muted-foreground/70">
+                Conteúdo ilustrativo
+              </div>
             </article>
           ))}
         </div>
@@ -306,17 +318,17 @@ function ProjetosDestaque() {
 
 function PaginaProjeto() {
   const campos = [
-    { l: "Nome", v: "Casa Jardim Botânico" },
-    { l: "Cidade", v: "São Paulo, SP" },
+    { l: "Nome", v: "Nome do projeto" },
+    { l: "Cidade", v: "Cidade ilustrativa" },
     { l: "Tipo", v: "Residencial · Reforma" },
-    { l: "Ano", v: "2024" },
+    { l: "Ano", v: "Ano" },
   ];
   const blocos = [
-    { t: "Contexto", d: "Apartamento de 110m² em prédio dos anos 80, com cozinha fechada e iluminação escassa." },
-    { t: "Necessidade", d: "Integrar os ambientes sociais, ganhar luz natural e criar um espaço para receber." },
-    { t: "Solução", d: "Demolição estratégica, paleta neutra com madeira clara e curadoria de mobiliário sob medida." },
-    { t: "Planta (opcional)", d: "Diagrama simples do antes e depois para reforçar a transformação." },
-    { t: "Antes & depois (opcional)", d: "Comparativo lado a lado das áreas mais impactantes da reforma." },
+    { t: "Contexto", d: "Espaço para um breve resumo do projeto, ambiente e ponto de partida." },
+    { t: "Necessidade", d: "O que o cliente buscava — pode ser preenchido caso a caso." },
+    { t: "Solução proposta", d: "Direção do projeto e principais decisões de arquitetura e interiores." },
+    { t: "Planta (opcional)", d: "Pode receber uma planta esquemática para apoiar a leitura do projeto." },
+    { t: "Antes e depois (opcional)", d: "Comparativo visual quando fizer sentido apresentar a transformação." },
   ];
   return (
     <section id="projeto" className="relative py-28" style={{ background: "var(--gradient-warm)" }}>
@@ -324,8 +336,12 @@ function PaginaProjeto() {
         <div className="mb-14 max-w-2xl">
           <SectionLabel>Página individual de projeto</SectionLabel>
           <h2 className="text-[clamp(2rem,4vw,3.25rem)] font-display leading-[1.05] tracking-tight">
-            A história por trás de cada espaço.
+            Como cada projeto pode ser apresentado.
           </h2>
+          <p className="mt-4 text-muted-foreground">
+            Estrutura sugerida: galeria de abertura, dados do projeto e blocos curtos com contexto,
+            necessidade e solução proposta. Conteúdo abaixo é ilustrativo.
+          </p>
         </div>
 
         <div className="overflow-hidden rounded-[2rem] border border-border bg-background shadow-[var(--shadow-float)]">
@@ -339,10 +355,10 @@ function PaginaProjeto() {
             <div className="absolute inset-0 bg-gradient-to-t from-foreground/40 via-transparent to-transparent" />
             <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between text-background sm:bottom-10 sm:left-10 sm:right-10">
               <div>
-                <div className="text-[11px] tracking-widest opacity-80">PROJETO 04</div>
-                <h3 className="mt-2 font-display text-3xl sm:text-5xl">Casa Jardim Botânico</h3>
+                <div className="text-[11px] tracking-widest opacity-80">EXEMPLO DE PROJETO</div>
+                <h3 className="mt-2 font-display text-3xl sm:text-5xl">Nome do projeto</h3>
               </div>
-              <div className="hidden text-right text-xs opacity-80 sm:block">galeria · 14 fotos</div>
+              <div className="hidden text-right text-xs opacity-80 sm:block">galeria de fotos</div>
             </div>
           </div>
 
@@ -365,12 +381,12 @@ function PaginaProjeto() {
                   <p className="mt-1 text-sm text-muted-foreground">{b.d}</p>
                 </div>
               ))}
-              <a
-                href="#contato"
-                className="mt-2 inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-3 text-sm text-background transition-colors hover:bg-foreground/90"
+              <span
+                aria-hidden
+                className="mt-2 inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-3 text-sm text-background"
               >
-                Quero algo assim →
-              </a>
+                Exemplo de fechamento da página
+              </span>
             </div>
           </div>
         </div>
@@ -381,9 +397,9 @@ function PaginaProjeto() {
 
 function AdminSimples() {
   const acoes = [
-    "Cadastrar projetos novos",
-    "Editar projetos existentes",
-    "Remover projetos",
+    "Adicionar projetos novos",
+    "Atualizar projetos existentes",
+    "Remover projetos do portfólio",
     "Organizar a ordem de exibição",
     "Marcar projetos em destaque",
     "Acesso protegido por login",
@@ -392,14 +408,15 @@ function AdminSimples() {
     <section id="admin" className="relative py-28">
       <div className="mx-auto grid max-w-7xl gap-14 px-6 lg:grid-cols-12 lg:items-center">
         <div className="lg:col-span-5">
-          <SectionLabel>Área administrativa</SectionLabel>
+          <SectionLabel>Área administrativa simples</SectionLabel>
           <h2 className="text-[clamp(2rem,4vw,3.25rem)] font-display leading-[1.05] tracking-tight">
-            Você no controle.<br />
-            <em className="italic text-[color:var(--sage-deep)]">Sem precisar</em> de ninguém.
+            Atualização do portfólio,{" "}
+            <em className="italic text-[color:var(--sage-deep)]">sem complicação</em>.
           </h2>
           <p className="mt-6 max-w-md text-muted-foreground">
-            Uma área protegida, pensada para o seu dia a dia. Sem termos técnicos, sem fricção.
-            Você entra, atualiza e o site reflete na hora.
+            Uma área protegida por acesso pessoal, pensada para o dia a dia do escritório. Permite
+            adicionar, atualizar e organizar projetos sem depender de outras pessoas — em
+            linguagem simples, sem termos técnicos.
           </p>
         </div>
 
@@ -415,7 +432,7 @@ function AdminSimples() {
                 <code className="text-xs text-muted-foreground">/admin</code>
               </div>
 
-              <div className="mb-5 font-display text-xl">Seus projetos</div>
+              <div className="mb-5 font-display text-xl">Gestão dos projetos</div>
               <ul className="space-y-2.5">
                 {acoes.map((a, i) => (
                   <li
@@ -428,7 +445,7 @@ function AdminSimples() {
                       </span>
                       {a}
                     </span>
-                    <span className="text-xs text-muted-foreground">passo {i + 1}</span>
+                    <span className="text-xs text-muted-foreground">item {i + 1}</span>
                   </li>
                 ))}
               </ul>
@@ -442,11 +459,11 @@ function AdminSimples() {
 
 function Opcionais() {
   const mods = [
-    { t: "Blog", d: "Reforço de autoridade e descoberta orgânica, se houver produção de conteúdo útil." },
-    { t: "Fornecedores", d: "Lista organizada de marceneiros, lojas, profissionais de confiança." },
-    { t: "Clientes & arquivos", d: "Cada cliente com seu espaço, documentos e referências." },
-    { t: "Biblioteca de referências", d: "Um banco visual com tudo que te inspira, organizado por tema." },
-    { t: "Paletas & apresentação", d: "Gerador simples para montar paletas e materiais de proposta." },
+    { t: "Blog", d: "Espaço para conteúdos autorais, reforçando autoridade ao longo do tempo." },
+    { t: "Fornecedores", d: "Organização interna de parceiros, lojas e profissionais de confiança." },
+    { t: "Clientes e arquivos", d: "Espaço por cliente, com referências, documentos e materiais." },
+    { t: "Biblioteca de referências", d: "Banco visual interno, organizado por tema ou por projeto." },
+    { t: "Apoio à apresentação", d: "Ferramentas simples para apoiar a montagem de propostas." },
   ];
   return (
     <section className="relative py-28" style={{ background: "var(--gradient-warm)" }}>
@@ -455,13 +472,13 @@ function Opcionais() {
           <div className="lg:col-span-7">
             <SectionLabel>Possibilidades opcionais</SectionLabel>
             <h2 className="text-[clamp(2rem,4vw,3.25rem)] font-display leading-[1.05] tracking-tight">
-              Ferramentas que crescem com você.
+              Módulos complementares, conforme a rotina.
             </h2>
           </div>
           <p className="max-w-md text-sm text-muted-foreground lg:col-span-5">
-            Além da gestão de projetos, a área administrativa também pode receber ferramentas
-            complementares de organização e apoio ao dia a dia do escritório, de acordo com o que
-            fizer sentido para sua rotina.
+            Além da gestão dos projetos, o site pode receber, no futuro, ferramentas
+            complementares de organização e apoio ao escritório. Estes módulos são opcionais e
+            discutíveis — não fazem parte obrigatória da proposta inicial.
           </p>
         </div>
 
@@ -508,13 +525,13 @@ function DirecaoVisual() {
     <section id="visual" className="relative py-28">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-14 max-w-2xl">
-          <SectionLabel>Direção visual</SectionLabel>
+          <SectionLabel>Direção visual sugerida</SectionLabel>
           <h2 className="text-[clamp(2rem,4vw,3.25rem)] font-display leading-[1.05] tracking-tight">
-            Três caminhos cromáticos.
+            Três direções cromáticas para discussão.
           </h2>
           <p className="mt-4 text-muted-foreground">
-            Bases neutras e quentes, com um acento de cor para conduzir o olhar. Escolhemos juntas
-            a que mais traduz seu trabalho.
+            Paletas pensadas com base em tons naturais, verdes suaves, madeira e contraste
+            elegante. Servem como ponto de partida para a escolha — não como definição final.
           </p>
         </div>
 
@@ -563,10 +580,14 @@ function Tipografia() {
     <section className="relative py-28" style={{ background: "var(--gradient-warm)" }}>
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-14 max-w-2xl">
-          <SectionLabel>Tipografia</SectionLabel>
+          <SectionLabel>Direções tipográficas</SectionLabel>
           <h2 className="text-[clamp(2rem,4vw,3.25rem)] font-display leading-[1.05] tracking-tight">
-            Quatro pares para experimentar.
+            Quatro combinações sugeridas.
           </h2>
+          <p className="mt-4 text-muted-foreground">
+            Pares pensados para transmitir sofisticação, clareza e personalidade. São referências
+            de linguagem visual — a escolha final é definida em conjunto.
+          </p>
         </div>
 
         <div className="grid gap-5 md:grid-cols-2">
@@ -601,9 +622,9 @@ function Tipografia() {
 
 function PresencaLocal() {
   const canais = [
-    { t: "Google Business", d: "Apareça em buscas locais com fotos atualizadas e avaliações reais." },
-    { t: "WhatsApp", d: "Botão de contato direto no site, com mensagem pré-preenchida." },
-    { t: "Instagram", d: "Continua sendo a vitrine do dia a dia — agora apoiando o portfólio." },
+    { t: "Google Business Profile", d: "Apoia a presença em buscas locais, com fotos e informações do escritório." },
+    { t: "WhatsApp", d: "Espaço previsto no site para contato direto pelo canal de preferência." },
+    { t: "Instagram", d: "Segue como vitrine do dia a dia, conectado ao portfólio no site." },
   ];
   return (
     <section className="relative py-28">
@@ -622,11 +643,12 @@ function PresencaLocal() {
           <div className="lg:col-span-7">
             <SectionLabel>Presença local</SectionLabel>
             <h2 className="text-[clamp(2rem,4vw,3.25rem)] font-display leading-[1.05] tracking-tight">
-              O site não trabalha sozinho.
+              O site dialoga com os canais existentes.
             </h2>
             <p className="mt-5 max-w-lg text-muted-foreground">
-              Ele se conecta aos canais que você já usa, criando um ecossistema discreto e
-              consistente em torno do seu nome.
+              A proposta considera o site como parte de um conjunto: WhatsApp, Instagram e Google
+              Business Profile seguem com seus papéis, com o portfólio funcionando como ponto de
+              referência.
             </p>
 
             <div className="mt-8 space-y-3">
@@ -674,43 +696,44 @@ function CTAFinal() {
 
           <div className="relative">
             <div className="text-[11px] uppercase tracking-[0.3em] text-[color:var(--sage)]">
-              Próximo passo
+              Fechamento da proposta
             </div>
             <h2 className="mt-5 font-display text-[clamp(2.2rem,5vw,4rem)] leading-[1.05] tracking-tight text-background">
-              Vamos lapidar essa<br />
-              proposta <em className="italic text-[color:var(--sage)]">juntas</em>?
+              Uma conversa curta para{" "}
+              <em className="italic text-[color:var(--sage)]">lapidar</em> a proposta.
             </h2>
             <p className="mx-auto mt-6 max-w-xl text-base text-background/70">
-              Uma conversa curta, sem compromisso, para alinhar escopo, prazos e o caminho visual
-              que mais combina com o seu trabalho.
+              Esta apresentação é um ponto de partida. A próxima etapa é uma conversa para ajustar
+              estrutura, conteúdo e direção visual ao que faz mais sentido para o trabalho de
+              Giovanna Caires.
             </p>
 
             <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-              <a
-                href="mailto:ola@estudio.com"
-                className="inline-flex items-center gap-2 rounded-full bg-background px-7 py-4 text-sm font-medium text-foreground transition-transform hover:scale-[1.02]"
+              <span
+                aria-hidden
+                className="inline-flex items-center gap-2 rounded-full bg-background px-7 py-4 text-sm font-medium text-foreground"
               >
-                Agendar conversa →
-              </a>
-              <a
-                href="#topo"
-                className="inline-flex items-center gap-2 rounded-full border border-background/30 px-7 py-4 text-sm text-background transition-colors hover:bg-background/10"
+                Espaço previsto para contato
+              </span>
+              <span
+                aria-hidden
+                className="inline-flex items-center gap-2 rounded-full border border-background/30 px-7 py-4 text-sm text-background"
               >
-                Revisar a proposta
-              </a>
+                WhatsApp · Instagram · e-mail
+              </span>
             </div>
           </div>
         </div>
 
         <footer className="mt-12 flex flex-wrap items-center justify-between gap-4 text-xs text-muted-foreground">
-          <div>© Apresentação de proposta · Documento confidencial</div>
+          <div>Apresentação visual de proposta · Material conceitual para Giovanna Caires</div>
           <div className="flex items-center gap-2">
             <span
               aria-hidden
               className="inline-block h-4 w-4 rounded-full"
               style={{ background: "var(--gradient-sage)" }}
             />
-            estúdio
+            Documento de referência
           </div>
         </footer>
       </div>

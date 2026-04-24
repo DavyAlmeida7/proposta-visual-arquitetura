@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
+import logoGiovanna from "@/assets/logo-giovanna.png";
 
 const links = [
   { href: "#proposta", label: "Proposta" },
   { href: "#estrutura", label: "Estrutura" },
   { href: "#projetos", label: "Projetos" },
-  { href: "#admin", label: "Admin" },
+  { href: "#admin", label: "Gestão" },
   { href: "#visual", label: "Visual" },
 ];
 
@@ -26,14 +27,12 @@ export function FloatingNav() {
         }`}
       >
         <a href="#topo" className="flex items-center gap-2 pl-1">
-          <span
-            aria-hidden
-            className="inline-block h-7 w-7 rounded-full"
-            style={{ background: "var(--gradient-sage)" }}
+          <img
+            src={logoGiovanna}
+            alt="Giovanna Caires — Arquitetura e Interiores"
+            className="h-7 w-auto object-contain"
           />
-          <span className="font-display text-lg leading-none tracking-tight">
-            estúdio<span className="text-[color:var(--sage-deep)]">.</span>
-          </span>
+          <span className="sr-only">Giovanna Caires</span>
         </a>
 
         <ul className="hidden items-center gap-7 text-[13px] text-muted-foreground md:flex">
@@ -49,13 +48,12 @@ export function FloatingNav() {
           ))}
         </ul>
 
-        <a
-          href="#contato"
-          className="inline-flex items-center gap-2 rounded-full bg-foreground px-4 py-2 text-[13px] font-medium text-background transition-all hover:bg-foreground/90"
+        <span
+          aria-hidden
+          className="inline-flex items-center gap-2 rounded-full border border-border/70 bg-[color:var(--bone)] px-4 py-2 text-[12px] uppercase tracking-[0.18em] text-muted-foreground"
         >
-          Conversar
-          <span aria-hidden>→</span>
-        </a>
+          Apresentação de proposta
+        </span>
       </nav>
     </header>
   );

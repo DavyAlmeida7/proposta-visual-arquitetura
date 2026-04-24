@@ -29,18 +29,18 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Proposta — Site-Portfólio para Arquiteta" },
+      { title: "Proposta visual — Site-portfólio para Giovanna Caires" },
       {
         name: "description",
         content:
-          "Apresentação visual e estratégica de uma proposta de site-portfólio: autoridade, identidade própria e gestão simples dos projetos.",
+          "Apresentação conceitual da estrutura, linguagem e direção estética pensadas para a presença digital de Giovanna Caires.",
       },
-      { name: "author", content: "Estúdio de Proposta" },
-      { property: "og:title", content: "Proposta — Site-Portfólio para Arquiteta" },
+      { name: "author", content: "Apresentação de proposta" },
+      { property: "og:title", content: "Proposta visual — Site-portfólio para Giovanna Caires" },
       {
         property: "og:description",
         content:
-          "Apresentação premium de uma proposta de site-portfólio para arquitetas: estrutura, direção visual e área administrativa simples.",
+          "Documento visual de proposta: estrutura sugerida, paletas, tipografia e organização do conteúdo para o site-portfólio de Giovanna Caires.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
